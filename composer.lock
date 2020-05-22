@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c875f4be4bdd250755929eff026f0525",
+    "content-hash": "8c66db061a09fb00792dccd09ccab798",
     "packages": [
         {
             "name": "aliyuncs/oss-sdk-php",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
-                "reference": "e69f57916678458642ac9d2fd341ae78a56996c8"
+                "reference": "053d7ba9e798e4c09b9c5c1edab153d25ea9643a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/e69f57916678458642ac9d2fd341ae78a56996c8",
-                "reference": "e69f57916678458642ac9d2fd341ae78a56996c8",
+                "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/053d7ba9e798e4c09b9c5c1edab153d25ea9643a",
+                "reference": "053d7ba9e798e4c09b9c5c1edab153d25ea9643a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -51,7 +51,47 @@
             ],
             "description": "Aliyun OSS SDK for PHP",
             "homepage": "http://www.aliyun.com/product/oss/",
-            "time": "2018-01-08T06:59:35+00:00"
+            "time": "2019-11-15T11:05:42+00:00"
+        },
+        {
+            "name": "wenruns/apple-ipa-install",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wenruns/apple-ipa-install.git",
+                "reference": "8a994f505cc50b71bc220655c5f903995a0cf378"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wenruns/apple-ipa-install/zipball/8a994f505cc50b71bc220655c5f903995a0cf378",
+                "reference": "8a994f505cc50b71bc220655c5f903995a0cf378",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "wenruns\\apple\\ipa\\install\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wenruns",
+                    "email": "1562194488@qq.com"
+                }
+            ],
+            "description": "Apple system ipa package automatic signature installation.",
+            "homepage": "https://github.com/wenruns/apple-ipa-install.git",
+            "time": "2020-05-06T07:54:32+00:00"
         }
     ],
     "packages-dev": [],

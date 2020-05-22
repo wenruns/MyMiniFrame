@@ -1,0 +1,21 @@
+{
+  "name": "wenruns/apple-ipa-install",
+  "description": "Apple system ipa package automatic signature installation.",
+  "license": "MIT",
+  "homepage": "https://github.com/wenruns/apple-ipa-install.git",
+  "keywords": [
+  ],
+  "authors": [
+    {
+      "name": "wenruns",
+      "email": "1562194488@qq.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "wenruns\\apple\\ipa\\install\\": "src/"
+    }
+  }
+}

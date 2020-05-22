@@ -6,6 +6,9 @@
  * Time: 17:17
  */
 
+use \core\wen\output\Output;
+use \core\wen\App;
+
 if (!function_exists('dd')) {
     // 打印输出
     function dd()
@@ -31,7 +34,7 @@ if (!function_exists('dump')) {
 }
 
 if (!function_exists('env')) {
-    function env($index, $default = '')
+    function env($index = '', $default = '')
     {
         static $env = [];
         if (empty($env)) {
@@ -42,6 +45,9 @@ if (!function_exists('env')) {
                     $env[trim($a[0])] = trim($a[1]);
                 }
             }
+        }
+        if (empty($index)) {
+            return $env;
         }
         if (!isset($env[$index])) {
             return $default;
@@ -87,21 +93,7 @@ if (!function_exists('config')) {
     // 获取配置信息
     function config($index = '', $default = null)
     {
-        $index = explode('.', $index);
-        $config_path = ROOT_PATH . DS . 'configs';
-        $config_file = $index[0] . '.php';
-        if (is_file($config_path . DS . $config_file)) {
-            unset($index[0]);
-            $configs = require($config_path . DS . $config_file);
-            foreach ($index as $key) {
-                if (!isset($configs[$key])) {
-                    return $default;
-                }
-                $configs = $configs[$key];
-            }
-            return $configs;
-        }
-        return $default;
+        return App::make(\core\wen\Config::class)->get($index, $default);
     }
 }
 
@@ -109,15 +101,34 @@ if (!function_exists('request')) {
     // 获取请求参数
     function request($index = '', $default = null)
     {
-        $params = array_merge($_POST, $_GET);
-        $index = explode('.', $index);
-        foreach ($index as $key) {
-            if (!isset($params[$key])) {
-                return $default;
-            }
-            $params = $params[$key];
-        }
-        return $params;
+        return App::make(core\wen\Request::class)->param($index, $default);
+    }
+}
+
+if (!function_exists('request_post')) {
+    function request_post($index = '', $default = null)
+    {
+        return App::make(\core\wen\Request::class)->post($index, $default);
+    }
+}
+
+if (!function_exists('request_get')) {
+    function request_get($index = '', $default = null)
+    {
+        return App::make(\core\wen\Request::class)->get($index, $default);
+    }
+}
+if (!function_exists('server')) {
+    function server($index = '', $default = null)
+    {
+        return App::make(\core\wen\Request::class)->server($index, $default);
+    }
+}
+
+if (!function_exists('post')) {
+    function post($index = '', $default = null)
+    {
+        return App::make(\core\wen\Request::class)->post($index, $default);
     }
 }
 
@@ -149,15 +160,9 @@ if (!function_exists('get_client_IP')) {
     // 获取客户端IP地址
     function get_client_IP()
     {
-        if (isset($_SERVER)) {
-            if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $realIp = $_SERVER['HTTP_X_FORWARDED_FOR'];
-            } else if (isset($_SERVER['HTTP_CLIENT_IP'])) {
-                $realIp = $_SERVER['HTTP_CLIENT_IP'];
-            } else {
-                $realIp = $_SERVER['REMOTE_ADDR'];
-            }
-        } else {
+        $request = App::make(\core\wen\Request::class);
+        $server = $request->server();
+        if (empty($server)) {
             if (getenv('HTTP_X_FORWARDED_FOR')) {
                 $realIp = getenv('HTTP_X_FORWARDED_FOR');
             } else if (getenv('HTTP_CLIENT_IP')) {
@@ -165,8 +170,23 @@ if (!function_exists('get_client_IP')) {
             } else {
                 $realIp = getenv('REMOTE_ADDR');
             }
+        } else {
+            if (isset($server['HTTP_X_FORWARDED_FOR'])) {
+                $realIp = $server['HTTP_X_FORWARDED_FOR'];
+            } else if (isset($server['HTTP_CLIENT_IP'])) {
+                $realIp = $server['HTTP_CLIENT_IP'];
+            } else {
+                $realIp = $server['REMOTE_ADDR'];
+            }
         }
         return $realIp;
+    }
+}
+
+if (!function_exists('view')) {
+    function view($template = '', $options = [])
+    {
+        return App::make(\core\wen\View::class)->template($template)->options($options);
     }
 }
 

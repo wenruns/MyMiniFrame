@@ -144,9 +144,8 @@ class ClassLoader
     }
 
     /**
-     * Registers a set of PSR-4 directories for a given namespace, either 
+     * Registers a set of PSR-4 directories for a given namespace, either
      * appending or prepending to the ones previously set for this namespace.
-     * 为给定名称空间注册一组PSR-4目录，可以在此名称空间的先前设置之前或之后进行注册。
      *
      * @param string       $prefix  The prefix/namespace, with trailing '\\'
      * @param array|string $paths   The PSR-4 base directories
@@ -233,7 +232,7 @@ class ClassLoader
 
     /**
      * Turns on searching the include path for class files.
-     * 打开搜索包含路径的类文件。
+     *
      * @param bool $useIncludePath
      */
     public function setUseIncludePath($useIncludePath)
@@ -242,8 +241,8 @@ class ClassLoader
     }
 
     /**
-     * Can be used to check if the autoloader uses the include path to check for classes.
-     * 可用于检查自动加载器是否使用include路径来检查类。
+     * Can be used to check if the autoloader uses the include path to check
+     * for classes.
      *
      * @return bool
      */
@@ -253,8 +252,8 @@ class ClassLoader
     }
 
     /**
-     * Turns off searching the prefix and fallback directories for classes that have not been registered with the class map.
-     * 关闭在前缀和后备目录中搜索尚未在类映射中注册的类。
+     * Turns off searching the prefix and fallback directories for classes
+     * that have not been registered with the class map.
      *
      * @param bool $classMapAuthoritative
      */

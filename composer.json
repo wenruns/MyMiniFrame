@@ -1,5 +1,6 @@
 {
     "require": {
-        "aliyuncs/oss-sdk-php": "^2.3"
+        "aliyuncs/oss-sdk-php": "^2.3",
+        "wenruns/apple-ipa-install": "1.0"
     }
 }

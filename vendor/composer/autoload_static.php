@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit3ac9f4ce43014bb6df491c316c5cd8d2
 {
     public static $prefixLengthsPsr4 = array (
+        'w' => 
+        array (
+            'wenruns\\apple\\ipa\\install\\' => 26,
+        ),
         'O' => 
         array (
             'OSS\\' => 4,
@@ -14,6 +18,10 @@ class ComposerStaticInit3ac9f4ce43014bb6df491c316c5cd8d2
     );
 
     public static $prefixDirsPsr4 = array (
+        'wenruns\\apple\\ipa\\install\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wenruns/apple-ipa-install/src',
+        ),
         'OSS\\' => 
         array (
             0 => __DIR__ . '/..' . '/aliyuncs/oss-sdk-php/src/OSS',

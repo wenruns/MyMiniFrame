@@ -6,4 +6,18 @@
  * Time: 11:38
  */
 
-Router::get('/', 'Controller@show');
+use \core\facades\Route;
+
+
+Route::group([
+    'middleware' => '',
+    'namespace' => '',
+    'prefix' => '',
+], function (\core\router\Route $route) {
+    $route->any('test/{id}', 'Controller@show')->name('show');
+    $route->any('test/test1', 'admin\\IndexController@index')->name('index');
+});
+
+
+
+

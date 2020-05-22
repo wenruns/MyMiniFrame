@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'wenruns\\apple\\ipa\\install\\' => array($vendorDir . '/wenruns/apple-ipa-install/src'),
     'OSS\\' => array($vendorDir . '/aliyuncs/oss-sdk-php/src/OSS'),
 );
