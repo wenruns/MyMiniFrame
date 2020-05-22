@@ -215,7 +215,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/wen/View.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
+            <state relative-caret-position="895">
               <caret line="93" column="41" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="41" />
               <folding>
                 <element signature="e#116#145#0#PHP" expanded="true" />
@@ -608,12 +608,12 @@
       <workItem from="1589786629627" duration="1098000" />
       <workItem from="1589936012953" duration="8624000" />
       <workItem from="1590021372351" duration="13673000" />
-      <workItem from="1590109451745" duration="21225000" />
+      <workItem from="1590109451745" duration="21482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316593000" />
+    <option name="totallyTimeSpent" value="316850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -992,7 +992,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
+        <state relative-caret-position="895">
           <caret line="93" column="41" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="41" />
           <folding>
             <element signature="e#116#145#0#PHP" expanded="true" />
