@@ -11,17 +11,8 @@ namespace app\controller;
 
 class Controller
 {
-    public function index($id)
-    {
-        return 'index->' . $id;
-    }
 
-    public function show($id)
-    {
-        return $this->view('show');
-    }
-
-    public function view($template = '', $options = [])
+    public function fetch($template = '', $options = [])
     {
         return view($template, $options);
     }

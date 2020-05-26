@@ -17,6 +17,7 @@ if (!function_exists('dd')) {
         if (empty($args)) {
             throw new \Exception('function dd need one argument at least.');
         }
+
         Output::show($args);
         exit(0);
     }
@@ -189,6 +190,17 @@ if (!function_exists('view')) {
         return App::make(\core\wen\View::class)->template($template)->options($options);
     }
 }
+
+
+if (!function_exists('view_layout')) {
+    function view_layout($template = '', $options = [])
+    {
+        extract($options);
+        include($template);
+    }
+}
+
+
 
 
 

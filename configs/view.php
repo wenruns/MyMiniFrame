@@ -10,8 +10,11 @@ return [
 
     'tpl_suffix' => '.blade.php',
 
-    'border_left' => '{',
-    'border_right' => '}',
+    'border_left' => '{{',
+    'border_right' => '}}',
+
+    'html_border_left' => '{!!',
+    'html_border_right' => '!!}',
 
     'note_border_left' => '{{--',
     'note_border_right' => '--}}',

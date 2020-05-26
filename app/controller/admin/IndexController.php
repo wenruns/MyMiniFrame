@@ -9,13 +9,24 @@
 namespace app\controller\admin;
 
 use app\controller\Controller;
+use wenruns\apple\ipa\install\MobileConfig;
 
-class IndexController
+class IndexController extends Controller
 {
-    public function index(Controller $controller = null)
+    public function index()
     {
-        return view('', [
-            'a' => ['<a>test</a>', 1231123, 1231]
-        ]);
+
+
+        $mobileConfig = new MobileConfig();
+        $res = $mobileConfig->redirectUrl('1')
+            ->organization('2')
+            ->appName('465')
+            ->subDir('wen')
+            ->create();
+        if ($res['status']) {
+//            $rst = $mobileConfig->sign($res['mobileconfig']);
+//            $mobileConfig->download($res['mobileconfig']);
+        }
+        dd($res);
     }
 }

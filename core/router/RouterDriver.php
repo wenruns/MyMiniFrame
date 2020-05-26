@@ -171,7 +171,6 @@ class RouterDriver
             return false;
         }
         $params = $this->paramsProcessor();
-
         $uri = $this->match_uri['uri'];
         $info = $this->pools[base64_encode($uri)];
         $this->runMiddleware($info['middleware']);

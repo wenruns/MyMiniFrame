@@ -9,6 +9,7 @@
 
 require_once __DIR__ . '/../core/Autoload.php';
 
+
 $app = new \core\wen\App();
 
 $kernel = $app->make(\core\wen\Kernel::class, [$app]);

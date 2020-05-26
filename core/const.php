@@ -22,3 +22,4 @@ defined('ERROR_PATH') || define('ERROR_PATH', CORE_PATH . DS . 'wen' . DS . 'err
 defined('LANG_PATH') || define('LANG_PATH', CORE_PATH . DS . 'lang');
 
 defined('CACHE_PATH') || define('CACHE_PATH', CORE_PATH . DS . 'caches');
+
