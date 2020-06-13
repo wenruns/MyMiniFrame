@@ -1,5 +1,6 @@
 <?php
 /**
+ * 响应对象
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2020/5/7
@@ -67,10 +68,12 @@ class Response
             $this->showError();
         } else {
             foreach ($this->_contents as $content) {
-                if (is_string($content)) {
-                    echo $content;
-                } else if ($content instanceof View) {
+                if ($content instanceof View) {
                     $content->render();
+                } else if (is_array($content) || is_object($content)) {
+                    echo json_encode($content, JSON_UNESCAPED_UNICODE);
+                } else {
+                    echo $content;
                 }
             }
         }

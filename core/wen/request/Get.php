@@ -14,6 +14,7 @@ class Get extends AbstractRequest
     public function data()
     {
         // TODO: Implement data() method.
+        unset($_GET['m']);
         return $_GET;
     }
 

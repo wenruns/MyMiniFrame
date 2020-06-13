@@ -1,22 +1,24 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wen
- * Date: 2019/10/30
- * Time: 18:48
+ * User: Administrator
+ * Date: 2020/6/12
+ * Time: 15:58
  */
 
-namespace src\htmlToImage;
+namespace app\controller\html2img;
 
 
-class HtmlToImgService
+use app\services\aliOss\AliOssService;
+use app\services\html2img\PhantomjsTools;
+
+class IndexController
 {
-    /**
-     * html转换成图片
-     */
-    public function html2Img()
+    protected $_upload_ali_oss = false;
+
+    public function index()
     {
-        $dir_path = storage_path('screen_shot');
+        $dir_path = storage_path('html2img/screen_shot');
         if (!is_dir($dir_path)) {
             mkdir($dir_path, 0777, true);
             chmod($dir_path, 0777);
@@ -24,14 +26,14 @@ class HtmlToImgService
         $img_name = 'screen_shot_' . date('YmdHis') . '.png';
 
         // 本地截图保存路径
-        $file_path = $dir_path . DS . $img_name;
+        $file_path = $dir_path . DS . date('Ymd') . DS . $img_name;
         // 需要截图url
         $url = request('url');
         // 上传aliOss的名称
         $objectName = request('objectName');
         // 上传到aliOss的bucket对象
         $bucket = request('bucket');
-        file_put_contents(storage_path('text.txt'), 'url:'.$url."\r\nname:".$objectName . "\r\nbucket:" . $bucket);
+        storage('log_' . date('Y_m_d') . '.txt', 'url:' . $url . "\r\nobjectName:" . $objectName . "\r\nbucket:" . $bucket . "\r\n时间：" . date('H:i:s', time()) . "\r\n=============================\r\n", 'html2img/logs', FILE_APPEND);
         try {
             if (function_exists('wkhtmltox_convert')) {
                 $res = wkhtmltox_convert(
@@ -39,9 +41,9 @@ class HtmlToImgService
                     array(
                         'out' => $file_path,
                         'in' => $url,
-                        'screenWidth'=>790,
-                        'smartWidth'=>true,
-                        'quality'=>100,
+                        'screenWidth' => 790,
+                        'smartWidth' => true,
+                        'quality' => 100,
 //                        'fmt'=>'jpg'
                     )
                 );
@@ -57,53 +59,43 @@ class HtmlToImgService
                 $tools = new PhantomjsTools();
                 $tools->htmlToImage($url, $file_path);
             } catch (\Exception $e1) {
-                apiResponse([
+                return [
                     'status' => false,
                     'errMsg' => $e->getMessage() . ' in file ' . $e->getFile() . ' on line ' . $e->getLine(),
-                ]);
+                ];
             }
         }
         try {
             if (is_file($file_path)) {
-                $aliOssService = new AliOssService();
-                $res = $aliOssService->postFile($file_path, $objectName, $bucket);
+                $res = false;
+                if ($this->_upload_ali_oss) {
+                    $aliOssService = new AliOssService();
+                    $res = $aliOssService->postFile($file_path, $objectName, $bucket);
+                }
                 $this->clearFile($dir_path);
-                apiResponse([
+                return [
                     'status' => true,
                     'errMsg' => 'ok',
                     'postFile' => $res,
-                ]);
+                ];
             } else {
-                apiResponse([
+                return [
                     'status' => false,
                     'errMsg' => '截图失败',
-                ]);
+                ];
             }
         } catch (\Exception $e) {
             $this->clearFile($dir_path);
-            apiResponse([
+            return [
                 'status' => false,
                 'errMsg' => $e->getMessage() . ' in file ' . $e->getFile() . ' on line ' . $e->getLine(),
-            ]);
+            ];
         }
     }
 
-    /**
-     * @param $path
-     */
+
     public function clearFile($path)
     {
-//        if (is_dir($path)) {
-//            foreach (scandir($path) as $key => $file) {
-//                if ($file != '.' && $file != '..') {
-//                    if (is_file($path . DS . $file)) {
-//                        unlink($path . DS . $file);
-//                    }
-//                }
-//            }
-//        } else if (is_file($path)) {
-//            unlink($path);
-//        }
-    }
 
+    }
 }

@@ -5,8 +5,8 @@
  * Date: 2019/10/29
  * Time: 18:47
  */
-namespace src\xml;
 
+namespace app\controller\xml;
 
 
 class ExplainFileController extends BaseController
@@ -15,6 +15,7 @@ class ExplainFileController extends BaseController
     protected $key = '123456';
 
     protected $xmlDirPath = ROOT_PATH . DS . 'storage' . DS;
+
 //    protected $xmlDirPath = 'D:/';
 
     public function __construct()
@@ -27,20 +28,20 @@ class ExplainFileController extends BaseController
     {
         try {
             // 获取xml内容
-            $content = $this->request('head').$this->file('xmlFile')->getContent().$this->request('footer');
+            $content = request('head') . $this->file('xmlFile')->getContent() . request('footer');
             // 保存到目标xml文件
             $this->saveXml($content);
-            apiResponse([
+            return [
                 'status' => true,
                 'code' => 200,
                 'errMsg' => 'ok'
-            ]);
+            ];
         } catch (\Exception $e) {
-            apiResponse([
+            return [
                 'status' => false,
                 'code' => 400,
                 'errMsg' => $e->getMessage()
-            ]);
+            ];
         }
     }
 
@@ -59,9 +60,9 @@ class ExplainFileController extends BaseController
         // 保存目标文件
         file_put_contents($this->xmlDirPath . $fileName, $xmlContent);
 
-        $logName = substr($fileName, strrpos($fileName, '/')+1);
-        $first= strpos($fileName, '/');
-        $logPath = $this->xmlDirPath . substr($fileName, 0, $first).DS.'Backup'.substr($fileName, $first, strrpos($fileName, '/')-$first+1);
+        $logName = substr($fileName, strrpos($fileName, '/') + 1);
+        $first = strpos($fileName, '/');
+        $logPath = $this->xmlDirPath . substr($fileName, 0, $first) . DS . 'Backup' . substr($fileName, $first, strrpos($fileName, '/') - $first + 1);
         if (strpos($fileName, 'Month') === false) {
             $logPath .= date('Y/m/d/');
         } else {
@@ -71,10 +72,9 @@ class ExplainFileController extends BaseController
             mkdir($logPath, 0777, true);
             chmod($logPath, 0777);
         }
-//        dd($logName, $logPath, $fileName);
         // 保存日志文件
 //        file_put_contents($logPath.str_replace('.xml', '', $logName).'.txt', $content);
-        file_put_contents($logPath.$logName, $xmlContent);
+        file_put_contents($logPath . $logName, $xmlContent);
     }
 
 }

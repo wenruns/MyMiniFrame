@@ -6,7 +6,7 @@
  * Time: 10:54
  */
 
-namespace src\htmlToImage;
+namespace app\services\html2img;
 
 
 class PhantomjsTools
@@ -18,8 +18,8 @@ class PhantomjsTools
 
     public function __construct()
     {
-        $this->command_window = __DIR__.DIRECTORY_SEPARATOR.'tools'.DIRECTORY_SEPARATOR.'bin'.DIRECTORY_SEPARATOR.'phantomjs.exe';
-        $this->file = __DIR__ . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'index.js';
+        $this->command_window = storage_path('html2img/tools/bin/phantomjs.exe');
+        $this->file = storage_path('html2img/js/index.js');
     }
 
     /**
@@ -30,7 +30,7 @@ class PhantomjsTools
      */
     public function htmlToImage($url, $savePath, $options = [])
     {
-        $command = (strtoupper(substr(PHP_OS,0,3))==='WIN' ? $this->command_window : $this->command_linux).' '.$this->file.' url='.$url.' path='.$savePath.' settings='.$this->makeJsonString($options);
+        $command = (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? $this->command_window : $this->command_linux) . ' ' . $this->file . ' url=' . $url . ' path=' . $savePath . ' settings=' . $this->makeJsonString($options);
 //        dd($command);
         return $this->exec($command);
     }
@@ -40,12 +40,12 @@ class PhantomjsTools
         $i = 0;
         $j = count($arr);
         foreach ($arr as $key => $val) {
-            $str .= "'".$key."':";
+            $str .= "'" . $key . "':";
             if (is_array($val)) {
                 $str .= '{';
                 $str = $this->makeJsonString($val, $str);
             } else {
-                $str .= "'".$val."'";
+                $str .= "'" . $val . "'";
             }
             $i++;
             if ($i < $j) {

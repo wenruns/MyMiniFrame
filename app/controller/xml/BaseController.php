@@ -5,16 +5,16 @@
  * Date: 2019/10/29
  * Time: 15:53
  */
-namespace src\xml;
+
+namespace app\controller\xml;
 
 
-use core\wen\FileTrait;
-use core\wen\RequestTrait;
+use core\wen\traits\FileTrait;
 
 Class BaseController
 {
 
-    use FileTrait, RequestTrait, MiddleWareTrait;
+    use MiddleWareTrait, FileTrait;
 
     public function __construct()
     {
@@ -39,17 +39,4 @@ Class BaseController
         return openssl_decrypt(base64_decode(openssl_decrypt($str, $method, $key, OPENSSL_RAW_DATA, $iv)), $method, $key, OPENSSL_RAW_DATA, $iv);
     }
 
-//
-//    public function config($index = '', $default = null)
-//    {
-//        $configs = require(ROOT_PATH . DS . 'configs' . DS . 'config.php');
-//        $index = explode('.', $index);
-//        foreach ($index as $key) {
-//            if (!isset($configs[$key])) {
-//                return $default;
-//            }
-//            $configs = $configs[$key];
-//        }
-//        return $configs;
-//    }
 }

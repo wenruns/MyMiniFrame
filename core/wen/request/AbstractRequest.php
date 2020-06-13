@@ -11,9 +11,9 @@ namespace core\wen\request;
 
 abstract class AbstractRequest
 {
-    private $__attributes = [];
+    protected $_attributes = [];
 
-    private $__arr = [];
+    protected $_arr = [];
 
 
     abstract public function data();
@@ -24,9 +24,12 @@ abstract class AbstractRequest
     public function __construct()
     {
         foreach ($this->data() as $key => $value) {
+            if (empty($key)) {
+                continue;
+            }
             $attrName = '_' . $key;
             $this->$attrName = $value;
-            $this->__attributes[] = $key;
+            $this->_attributes[] = $key;
         }
         $this->handle();
     }
@@ -35,18 +38,18 @@ abstract class AbstractRequest
     {
         $attrName = '_' . $index;
         unset($this->$attrName);
-        if (isset($this->__arr[$index])) {
-            unset($this->__arr[$index]);
+        if (isset($this->_arr[$index])) {
+            unset($this->_arr[$index]);
         }
     }
 
     public function clear()
     {
-        foreach ($this->__attributes as $key) {
+        foreach ($this->_attributes as $key) {
             $attrName = '_' . $key;
             unset($this->$attrName);
-            if (isset($this->__arr[$key])) {
-                unset($this->__arr[$key]);
+            if (isset($this->_arr[$key])) {
+                unset($this->_arr[$key]);
             }
         }
     }
@@ -80,21 +83,26 @@ abstract class AbstractRequest
 
     public function toArray()
     {
-        if (empty($this->__arr)) {
-            foreach ($this->__attributes as $key) {
+        if (empty($this->_arr)) {
+            foreach ($this->_attributes as $key) {
                 $attrName = '_' . $key;
-                $this->__arr[$key] = $this->$attrName;
+                $this->_arr[$key] = $this->$attrName;
             }
         }
-        return $this->__arr;
+        return $this->_arr;
     }
 
 
     public function addAttribute($key, $value)
     {
+        if (empty($key)) {
+            return false;
+        }
         $attrName = '_' . $key;
         $this->$attrName = $value;
-        $this->__attributes[] = $key;
-        $this->__arr[$key] = $value;
+        $this->_attributes[] = $key;
+        if (!empty($this->_arr)) {
+            $this->_arr[$key] = $value;
+        }
     }
 }

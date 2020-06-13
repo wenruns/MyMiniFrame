@@ -6,7 +6,7 @@
  * Time: 18:36
  */
 
-namespace src\htmlToImage;
+namespace app\services\aliOss;
 
 use OSS\OssClient;
 

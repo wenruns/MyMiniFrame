@@ -8,25 +8,25 @@
 
 namespace app\controller\admin;
 
-use app\controller\Controller;
+use core\wen\App;
+use middlewares\MiddleInterface;
 use wenruns\apple\ipa\install\MobileConfig;
 
-class IndexController extends Controller
+class IndexController
 {
     public function index()
     {
-
-
-        $mobileConfig = new MobileConfig();
-        $res = $mobileConfig->redirectUrl('1')
-            ->organization('2')
-            ->appName('465')
-            ->subDir('wen')
-            ->create();
-        if ($res['status']) {
-//            $rst = $mobileConfig->sign($res['mobileconfig']);
-//            $mobileConfig->download($res['mobileconfig']);
-        }
-        dd($res);
+        dump(request());
+//        $mobileConfig = new MobileConfig();
+//        $res = $mobileConfig->redirectUrl('1')
+//            ->organization('2')
+//            ->appName('465')
+//            ->subDir('wen')
+//            ->create();
+//        if ($res['status']) {
+////            $rst = $mobileConfig->sign($res['mobileconfig']);
+////            $mobileConfig->download($res['mobileconfig']);
+//        }
+//        dump($res);
     }
 }

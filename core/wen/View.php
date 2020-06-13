@@ -1,5 +1,6 @@
 <?php
 /**
+ * 模板解析
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2020/5/8
@@ -210,7 +211,7 @@ class View
         }
         $cache_path = $path . DS . $cache_file_name;
 
-        if ((!key_exists(md5($relative_path), $this->_layouts) || $this->_layouts[md5($relative_path)] == 1) && (config('app.APP_DEBUG', false) || !file_exists($cache_path))) {
+        if ((!key_exists(md5($relative_path), $this->_layouts) || $this->_layouts[md5($relative_path)] == 1) && (config('app.app_debug', false) || !file_exists($cache_path))) {
             $this->cacheViewPage($real_path, $cache_path);
         }
         return str_replace('\\', '/', $cache_path);

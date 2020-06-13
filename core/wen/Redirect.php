@@ -1,5 +1,6 @@
 <?php
 /**
+ * 重定向
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2020/5/9
@@ -8,8 +9,6 @@
 
 namespace core\wen;
 
-
-use core\wen\request\Server;
 
 class Redirect
 {

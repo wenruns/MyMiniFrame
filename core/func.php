@@ -77,8 +77,18 @@ if (!function_exists('storage_path')) {
     // 返回存储路径
     function storage_path($path = '')
     {
-        return ROOT_PATH . DS . 'storage' . DS . $path;
-//        return rtrim(ROOT_PATH . DS . 'storage' . DS . $path, DS);
+        return ROOT_PATH . DS . 'storage' . DS . str_replace('/', DS, $path);
+    }
+}
+
+if (!function_exists('storage')) {
+    function storage($fileName, $content, $path = '', $flags = 0, $context = null)
+    {
+        if (!is_dir(storage_path($path))) {
+            mkdir(storage_path($path), 0777, true);
+            chmod(storage_path($path), 0777);
+        }
+        return file_put_contents(storage_path($path) . DS . $fileName, $content, $flags, $context);
     }
 }
 

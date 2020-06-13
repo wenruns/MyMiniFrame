@@ -6,7 +6,7 @@
  * Time: 11:08
  */
 
-
+echo '起始内存：' . memory_get_usage() . '<hr/>';
 require_once __DIR__ . '/../core/Autoload.php';
 
 
@@ -17,6 +17,10 @@ $kernel = $app->make(\core\wen\Kernel::class, [$app]);
 $response = $kernel->handle();
 
 $response->output();
+
+echo '<hr/>结束内存：' . memory_get_usage() . '<hr/>';
+
+echo '峰值：' . memory_get_peak_usage() . '<hr/>';
 
 
 

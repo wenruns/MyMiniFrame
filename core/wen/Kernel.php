@@ -1,5 +1,6 @@
 <?php
 /**
+ * 内核
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2020/5/7
@@ -20,18 +21,46 @@ use hooks\BeforeMethod;
 
 class Kernel
 {
+    /**
+     * 应用缓存
+     * @var App|null
+     */
     protected $app = null;
 
+    /**
+     * 响应对象
+     * @var Response|null
+     */
     protected $response = null;
 
-    protected $router = null;
+    /**
+     * 路由驱动
+     * @var null
+     */
+    protected $routeDriver = null;
 
+    /**
+     * 配置实例
+     * @var Config|null
+     */
     protected $config = null;
 
+    /**
+     * 请求对象
+     * @var Request|null
+     */
     protected $request = null;
 
+    /**
+     * 动作
+     * @var null
+     */
     private $__action = null;
 
+    /**
+     * Kernel constructor.
+     * @param App $app
+     */
     public function __construct(App $app)
     {
         $this->app = $app;
@@ -43,6 +72,10 @@ class Kernel
         App::addInstance(Config::class, $this->config);
     }
 
+    /**
+     * 业务逻辑处理入口
+     * @return Response|null
+     */
     public function handle()
     {
         try {
@@ -71,25 +104,46 @@ class Kernel
         return $this->response;
     }
 
+    /**
+     * 启动app
+     * @return $this
+     * @throws RouteException
+     * @throws \ReflectionException
+     */
     public function runApp()
     {
         $this->loadRoutes()->doAction()->runAfterMethodHook($this->__action);
         return $this;
     }
 
+    /**
+     * 执行应用前置钩子
+     * @return $this
+     * @throws \Exception
+     */
     public function runBeforeHooks()
     {
         $this->app->make(BeforeApp::class, [$this->app, $this->response])->run();
         return $this;
     }
 
-
+    /**
+     * 执行应用后置钩子
+     * @return $this
+     * @throws \Exception
+     */
     public function runAfterHooks()
     {
         $this->app->make(AfterApp::class, [$this->app, $this->response])->run();
         return $this;
     }
 
+    /**
+     * 执行方法前置钩子
+     * @param $action
+     * @return $this
+     * @throws \Exception
+     */
     protected function runBeforeMethodHook($action)
     {
         $this->__action = $action;
@@ -97,6 +151,12 @@ class Kernel
         return $this;
     }
 
+    /**
+     * 执行方法后置钩子
+     * @param $action
+     * @return $this
+     * @throws \Exception
+     */
     protected function runAfterMethodHook($action)
     {
         $this->app->make(AfterMethod::class, [$this->app, $this->response])->run($action);
@@ -104,25 +164,43 @@ class Kernel
     }
 
 
-    public function getRouter()
+    /**
+     * 获取路由驱动
+     * @return mixed|null
+     * @throws \Exception
+     */
+    public function getRouteDriver()
     {
-        if (empty($this->router)) {
-            $this->router = $this->app->make(RouterDriver::class);
+        if (empty($this->routeDriver)) {
+            $this->routeDriver = $this->app->make(RouterDriver::class);
         }
-        return $this->router;
+        return $this->routeDriver;
     }
 
+    /**
+     * 加载路由
+     * @return $this
+     * @throws \Exception
+     */
     protected function loadRoutes()
     {
-        $this->getRouter()->loadRoutes(ROUTER_PATH)->getAction();
+//        $this->getRouteDriver()->loadRoutes(ROUTER_PATH)->getAction();
+        $this->getRouteDriver()->loadRoutes(ROUTER_PATH);
         return $this;
     }
 
+    /**
+     * 执行业务逻辑
+     * @return $this
+     * @throws RouteException
+     * @throws \ReflectionException
+     */
     protected function doAction()
     {
-        $action = $this->getRouter()->getAction();
+        // 获取动作
+        $action = $this->getRouteDriver()->getAction();
         if ($action === false) {
-            if ($this->config('APP_DEBUG', false)) {
+            if ($this->config('app_debug', false)) {
                 throw new RouteException('No route found');
             }
             $this->response->error('Route matching failed.')->desc('No route found')->statusCode(404);
@@ -141,41 +219,67 @@ class Kernel
         $params = $reflection->getMethod($method)->getParameters();
         $param_values = [];
         foreach ($params as $param) {
-            try {
-                if ($param_class = $param->getClass()) {
-                    $value = App::make($param_class->getName());
-                } else {
+            if ($param_class = $param->getClass()) {
+                $value = App::make($param_class->getName(), $this->initParamObject($param_class->getName()));
+            } else {
+                try {
                     $value = isset($method_params[$param->getName()]) ? $method_params[$param->getName()] : $param->getDefaultValue();
+                } catch (\Exception $e) {
+                    throw new \Exception('缺少参数：' . $param->getName());
                 }
-                $param_values[$param->getPosition()] = $value;
-            } catch (\Exception $e) {
-                throw new \Exception('缺少参数：' . $param->getName());
             }
+            $param_values[$param->getPosition()] = $value;
         }
-
         $this->runBeforeMethodHook($action)->response->content($instance->$method(...$param_values));
         return $this;
     }
 
+    protected function initParamObject($class)
+    {
+        $params = [];
+        $valueReflection = new \ReflectionClass(App::checkClassName($class));
+        $constructParams = $valueReflection->getConstructor()->getParameters();
+        foreach ($constructParams as $item) {
+            if ($classParam = $item->getClass()) {
+                $params[$item->getPosition()] = App::make($classParam->getName(), $this->initParamObject($classParam->getName()));
+            } else {
+                try {
+                    $params[$item->getPosition()] = request($item->getName()) ? request($item->getName()) : $item->getDefaultValue();
+                } catch (\Exception $e) {
+                    throw new \Exception('缺少参数：' . $item->getName());
+                }
+            }
+        }
+        return $params;
+    }
 
+
+    /**
+     * 控制器检查
+     * @param $controller
+     * @param $namespace
+     * @return string
+     */
     protected function checkController($controller, $namespace)
     {
         $namespaceConfig = $this->config('app.namespace', ['root' => '\\src\\', 'map' => []]);
         $root = $namespaceConfig['root'];
         $map = $namespaceConfig['map'];
-        if (empty($map) || strpos($controller, '\\') === false) {
-            return $root . ($namespace ? $namespace . '\\' : '') . $controller;
+
+        if (!empty($map) && !empty($namespace) && isset($map[$namespace])) {
+            $root = $map[$namespace];
+            $namespace = '';
         }
-        $len = strpos($controller, '\\');
-        $prefix = substr($controller, 0, $len);
-        if (isset($map[$prefix])) {
-            $controller = substr($controller, $len + 1);
-            $root = $map[$prefix];
-        }
+
         return $root . ($namespace ? $namespace . '\\' : '') . $controller;
     }
 
 
+    /**
+     * 实例化控制器
+     * @param $controller
+     * @return mixed
+     */
     protected function instanceResolve($controller)
     {
         if (is_object($controller)) {
@@ -184,6 +288,12 @@ class Kernel
         return $this->app->make($controller);
     }
 
+    /**
+     * 获取配置
+     * @param string $key
+     * @param null $default
+     * @return mixed|null
+     */
     public function config($key = '', $default = null)
     {
         return $this->config->get($key, $default);

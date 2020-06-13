@@ -7,10 +7,19 @@
  */
 
 use \core\facades\Route;
+use  \core\router\Route as Router;
 
-Route::group([
-    'namespace' => 'admin'
-], function (\core\router\Route $router) {
-    $router->any('/', 'IndexController@index');
-
-});
+//Route::group([
+//    'namespace' => 'admin',
+//    'prefix' => '',
+//    'middleware' => []
+//], function (Router $router) {
+//    $router->any('/', 'IndexController@index');
+//    $router->group([
+//        'namespace' => 'test',
+//        'prefix' => '',
+//        'middleware' => []
+//    ], function (Router $router) {
+//        $router->any('test', 'IndexController@index');
+//    });
+//});

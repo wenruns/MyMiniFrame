@@ -11,6 +11,9 @@ namespace middlewares;
 
 class ExampleMiddle implements MiddleInterface
 {
+    public function __construct($id)
+    {
+    }
 
     public function handle()
     {

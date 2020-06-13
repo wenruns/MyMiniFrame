@@ -7,17 +7,21 @@
  */
 
 use \core\facades\Route;
-
+use \core\router\Route as Router;
 
 Route::group([
-    'middleware' => '',
-    'namespace' => '',
-    'prefix' => '',
-], function (\core\router\Route $route) {
-    $route->any('test/{id}', 'Controller@show')->name('show');
-    $route->any('test/test1', 'admin\\IndexController@index')->name('index');
+    'prefix' => 'html2img',
+    'namespace' => 'html2img'
+], function (Router $router) {
+    $router->any('/', 'IndexController@index');
 });
 
+Route::group([
+    'prefix' => 'xml',
+    'namespace' => 'xml'
+], function (Router $route) {
+    $route->any('/', 'ExplainFileController@accept');
+});
 
 
 

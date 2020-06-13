@@ -1,10 +1,12 @@
 <?php
 /**
+ * 文件上传处理
  * Created by PhpStorm.
  * User: wen
  * Date: 2019/10/29
  * Time: 18:53
  */
+
 namespace core\wen;
 
 
@@ -28,7 +30,7 @@ class File
     {
         if ($index) {
             if (!isset($_FILES[$index])) {
-                throw new \Exception('undefined index '.$index);
+                throw new \Exception('undefined index ' . $index);
             }
             $this->file = $_FILES[$index];
         } else {
@@ -37,7 +39,8 @@ class File
         return $this;
     }
 
-    public function getContent() {
+    public function getContent()
+    {
         if (empty($this->file) || !isset($this->file['tmp_name'])) {
             return null;
         }

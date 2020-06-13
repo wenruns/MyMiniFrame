@@ -1,5 +1,6 @@
 <?php
 /**
+ * 请求对象
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2020/5/8
@@ -12,9 +13,12 @@ namespace core\wen;
 use core\wen\request\Get;
 use core\wen\request\Post;
 use core\wen\request\Server;
+use core\wen\traits\FileTrait;
 
 class Request
 {
+    use FileTrait;
+
     private $__post = null;
     private $__get = null;
     private $__server = null;

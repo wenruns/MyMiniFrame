@@ -6,7 +6,7 @@
  * Time: 11:24
  */
 
-namespace src\xml;
+namespace app\controller\xml;
 
 trait MiddleWareTrait
 {
