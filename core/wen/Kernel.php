@@ -72,6 +72,26 @@ class Kernel
         App::addInstance(Config::class, $this->config);
     }
 
+    protected function accessControlAllowOrigin()
+    {
+        $accesses = $this->config->get('app.access_control');
+        if (empty($accesses)) {
+            return $this;
+        }
+        if (!empty($accesses['allow_origins'])) {
+            foreach ($accesses['allow_origins'] as $origin) {
+                header("Access-Control-Allow-Origin: $origin");
+            }
+        }
+        if (!empty($accesses['allow_methods'])) {
+            header('Access-Control-Allow-Methods: ' . implode(',', $accesses['allow_methods']));
+        }
+        if (!empty($accesses['allow_headers'])) {
+            header('Access-Control-Allow-Headers: ' . implode(',', $accesses['allow_headers']));
+        }
+        return $this;
+    }
+
     /**
      * 业务逻辑处理入口
      * @return Response|null
@@ -79,7 +99,8 @@ class Kernel
     public function handle()
     {
         try {
-            $this->runBeforeHooks()
+            $this->accessControlAllowOrigin()
+                ->runBeforeHooks()
                 ->runApp()
                 ->runAfterHooks();
         } catch (\Error $e) {

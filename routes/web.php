@@ -23,5 +23,12 @@ Route::group([
     $route->any('/', 'ExplainFileController@accept');
 });
 
+Route::group([
+    'namespace' => 'home',
+], function (Router $route) {
+    $route->any('/', 'IndexController@index');
+
+});
+
 
 

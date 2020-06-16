@@ -1,0 +1,40 @@
+{
+	"connectType": "http",
+	"apis":{
+		"login": {
+			"url":"http://test-html.com",
+			"method": "GET"
+		}
+	},
+	"defaultTheme": "skyblue",
+	"themes": [
+		{
+			"text": "小草绿",
+			"value": {
+				"value": "green",
+				"style": {
+					"background": "green",
+					"color": "white"
+				}
+			}
+		},{
+			"text": "天空蓝",
+			"value": {
+				"value": "skyblue",
+				"style":{
+					"background": "skyblue",
+					"color": "white"
+				}
+			}
+		},{
+			"text": "鲜血红",
+			"value":{
+				"value": "red",
+				"style":{
+					"background": "red",
+					"color": "white"
+				}
+			}
+		}
+	]
+}

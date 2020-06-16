@@ -2,101 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d6d741-6636-484d-a262-d2095c5cdcc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Bootstrap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controller/BaseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controller/admin/test/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controller/home/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controller/html2img/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/Bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/GitService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/admin/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/home/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/const.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/const.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/facades/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/facades/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/func.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/func.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/RouterDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/RouterDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/Hooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Hooks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/wen/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/Middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Middleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/Redirect.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Redirect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/Response.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/request/AbstractRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/request/AbstractRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/request/Get.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/request/Get.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/traits/FileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/traits/FileTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/ExampleMiddle.php" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/ExampleMiddle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html2img.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/AliOssService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/aliOss/AliOssService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/HtmlToImgService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/PhantomjsTools.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/html2img/PhantomjsTools.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/ChangeLog" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/ChangeLog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/LICENSE.BSD" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/LICENSE.BSD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/bin/phantomjs.exe" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/bin/phantomjs.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/arguments.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/arguments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/child_process-examples.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/child_process-examples.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/colorwheel.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/colorwheel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/countdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/countdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/detectsniff.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/detectsniff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/echoToFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/echoToFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/features.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/features.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/fibo.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/fibo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/hello.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/injectme.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/injectme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/loadspeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/loadspeed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/loadurlwithoutcss.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/loadurlwithoutcss.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/modernizr.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/modernizr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/netlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/netlog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/netsniff.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/netsniff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/openurlwithproxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/openurlwithproxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/outputEncoding.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/outputEncoding.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/page_events.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/page_events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/pagecallback.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/pagecallback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/phantomwebintro.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/phantomwebintro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/postjson.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/postjson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/postserver.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/postserver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/printenv.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/printenv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/printheaderfooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/printheaderfooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/printmargins.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/printmargins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/rasterize.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/rasterize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/render_multi_url.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/render_multi_url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/responsive-screenshot.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/responsive-screenshot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/run-jasmine.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/run-jasmine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/run-jasmine2.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/run-jasmine2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/run-qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/run-qunit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/scandir.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/scandir.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/serverkeepalive.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/serverkeepalive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/simpleserver.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/simpleserver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/sleepsort.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/sleepsort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/stdin-stdout-stderr.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/stdin-stdout-stderr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/universe.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/universe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/unrandomize.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/unrandomize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/useragent.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/useragent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/waitfor.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/waitfor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/examples/walk_through_frames.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/examples/walk_through_frames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/htmlToImage/tools/third-party.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storage/html2img/tools/third-party.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/xml/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/ExplainFileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/xml/ExplainFileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/MiddleWareTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/xml/MiddleWareTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/xml/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,19 +35,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controller/xml/ExplainFileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="531">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#86#110#0#PHP" expanded="true" />
               </folding>
@@ -147,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/facades/Route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="531">
               <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#6#93#0#PHP" expanded="true" />
@@ -159,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/router/Route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
+            <state relative-caret-position="531">
               <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
               <folding>
                 <element signature="e#6#102#0#PHP" expanded="true" />
@@ -172,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/router/RouterDriver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="126" column="21" lean-forward="true" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+            <state relative-caret-position="2825">
+              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
               <folding>
                 <element signature="e#6#125#0#PHP" expanded="true" />
               </folding>
@@ -181,11 +83,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="350">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/configs/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/wen/Kernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
+              <folding>
+                <element signature="e#6#99#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -256,14 +188,12 @@
         <option value="$PROJECT_DIR$/core/wen/bootstrap.php" />
         <option value="$PROJECT_DIR$/core/wen/BootstrapInterface.php" />
         <option value="$PROJECT_DIR$/app/controller/admin/test/IndexController.php" />
-        <option value="$PROJECT_DIR$/configs/app.php" />
         <option value="$PROJECT_DIR$/configs/database.php" />
         <option value="$PROJECT_DIR$/app/controller/Bootstrap.php" />
         <option value="$PROJECT_DIR$/core/const.php" />
         <option value="$PROJECT_DIR$/core/wen/request/AbstractRequest.php" />
         <option value="$PROJECT_DIR$/core/wen/Request.php" />
         <option value="$PROJECT_DIR$/core/wen/request/Get.php" />
-        <option value="$PROJECT_DIR$/core/wen/Kernel.php" />
         <option value="$PROJECT_DIR$/middlewares/ExampleMiddle.php" />
         <option value="$PROJECT_DIR$/core/wen/App.php" />
         <option value="$PROJECT_DIR$/app/services/alioss/AliOssService.php" />
@@ -277,18 +207,20 @@
         <option value="$PROJECT_DIR$/storage/html2img/logs/log_2020_06_13.txt" />
         <option value="$PROJECT_DIR$/app/controller/html2img/IndexController.php" />
         <option value="$PROJECT_DIR$/public/html2img.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/app/controller/admin/IndexController.php" />
         <option value="$PROJECT_DIR$/core/wen/traits/FileTrait.php" />
         <option value="$PROJECT_DIR$/app/controller/BaseController.php" />
         <option value="$PROJECT_DIR$/app/controller/xml/BaseController.php" />
         <option value="$PROJECT_DIR$/app/controller/xml/ExplainFileController.php" />
         <option value="$PROJECT_DIR$/app/controller/xml/MiddleWareTrait.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/core/router/Route.php" />
         <option value="$PROJECT_DIR$/core/facades/Route.php" />
         <option value="$PROJECT_DIR$/core/router/RouterDriver.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/controller/home/IndexController.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/configs/app.php" />
+        <option value="$PROJECT_DIR$/core/wen/Kernel.php" />
       </list>
     </option>
   </component>
@@ -299,7 +231,7 @@
       <path value="$PROJECT_DIR$/vendor/wenruns/apple-ipa-install" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -331,6 +263,13 @@
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -338,6 +277,11 @@
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
@@ -355,6 +299,11 @@
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="wen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
@@ -469,18 +418,19 @@
       <workItem from="1590712698519" duration="1801000" />
       <workItem from="1591838935417" duration="16899000" />
       <workItem from="1591922114666" duration="16371000" />
-      <workItem from="1592008550234" duration="13042000" />
+      <workItem from="1592008550234" duration="13455000" />
+      <workItem from="1592182122339" duration="44000" />
+      <workItem from="1592289267339" duration="7225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424621000" />
+    <option name="totallyTimeSpent" value="432303000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21748401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -492,8 +442,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4968017" visible="true" weight="0.21235102" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4968017" visible="true" weight="0.31310943" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50319827" side_tool="true" weight="0.31744313" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -545,13 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -608,16 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-          <folding>
-            <element signature="e#6#101#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/htmlToImage/HtmlToImgService.php" />
     <entry file="file://$PROJECT_DIR$/core/wen/View.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -646,19 +579,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/html2img/logs/log.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="232" column="34" selection-start-line="232" selection-start-column="15" selection-end-line="232" selection-end-column="34" />
-          <folding>
-            <element signature="e#6#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/html2img/logs/log.txt" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/basic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -716,26 +637,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/html2img.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/GitService.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html2img.php" />
+    <entry file="file://$PROJECT_DIR$/app/controller/Controller.php" />
+    <entry file="file://$PROJECT_DIR$/app/controller/GitService.php" />
     <entry file="file://$PROJECT_DIR$/core/func.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -763,13 +667,6 @@
           <folding>
             <element signature="e#129#146#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -834,24 +731,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/xml/ExplainFileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
+        <state relative-caret-position="75">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/router/RouterDriver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2825">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#125#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        <state relative-caret-position="531">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#86#110#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#101#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/router/Route.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
+        <state relative-caret-position="531">
           <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
           <folding>
             <element signature="e#6#102#0#PHP" expanded="true" />
@@ -862,7 +800,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/facades/Route.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="531">
           <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="e#6#93#0#PHP" expanded="true" />
@@ -870,20 +808,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/router/RouterDriver.php">
+    <entry file="file://$PROJECT_DIR$/configs/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="126" column="21" lean-forward="true" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
-          <folding>
-            <element signature="e#6#125#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="481">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
+    <entry file="file://$PROJECT_DIR$/core/wen/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="556">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#6#99#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

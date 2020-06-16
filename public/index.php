@@ -6,7 +6,8 @@
  * Time: 11:08
  */
 
-echo '起始内存：' . memory_get_usage() . '<hr/>';
+header("Access-Control-Allow-Origin:*");
+//echo '起始内存：' . memory_get_usage() . '<hr/>';
 require_once __DIR__ . '/../core/Autoload.php';
 
 
@@ -18,11 +19,9 @@ $response = $kernel->handle();
 
 $response->output();
 
-echo '<hr/>结束内存：' . memory_get_usage() . '<hr/>';
+//echo '<hr/>结束内存：' . memory_get_usage() . '<hr/>';
 
-echo '峰值：' . memory_get_peak_usage() . '<hr/>';
-
-
+//echo '峰值：' . memory_get_peak_usage() . '<hr/>';
 
 
 ////dd($_SERVER['REQUEST_URI']);

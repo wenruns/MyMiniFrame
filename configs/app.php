@@ -36,4 +36,12 @@ return [
 //            'test' => '\\app\\controller\\admin\\'
         ],
     ],
+    /**
+     * 跨域设置
+     */
+    'access_control' => [
+        'allow_origins' => [],
+        'allow_methods' => [],
+        'allow_headers' => [],
+    ],
 ];
