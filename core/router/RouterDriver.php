@@ -203,8 +203,9 @@ class RouterDriver
     }
 
     /**
-     * 执行中间件
+     * 中间件
      * @param $middleware
+     * @throws \Exception
      */
     protected function runMiddleware($middleware)
     {

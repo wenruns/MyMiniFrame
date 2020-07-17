@@ -22,10 +22,10 @@
     </style>
 </head>
 <body>
-<?php foreach($data as $key =>$var) : ?>
+@foreach($data as $key =>$var)
     <section class="one-group-data">
-        <?php view_layout("E:/wens/wens/testHtml/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php",['data'=>$var,'enter'=>true]) ?>
+        @include('dump/arr',['data'=>$var,'enter'=>true])
     </section>
-<?php endforeach; ?>
+@endforeach
 </body>
 </html>

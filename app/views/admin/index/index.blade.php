@@ -1,3 +1,3 @@
-@include('common/header', $headerInfo)
+@include('/admin/common/header')
 
-@include('common/footer')
+@include('/admin/common/footer')

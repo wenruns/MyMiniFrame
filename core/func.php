@@ -10,7 +10,10 @@ use \core\wen\output\Output;
 use \core\wen\App;
 
 if (!function_exists('dd')) {
-    // 打印输出
+    /**
+     * 打印输出
+     * @throws Exception
+     */
     function dd()
     {
         $args = func_get_args();
@@ -24,6 +27,9 @@ if (!function_exists('dd')) {
 }
 
 if (!function_exists('dump')) {
+    /**
+     * @throws Exception
+     */
     function dump()
     {
         $args = func_get_args();
@@ -35,6 +41,12 @@ if (!function_exists('dump')) {
 }
 
 if (!function_exists('env')) {
+    /**
+     * 获取环境变量
+     * @param string $index
+     * @param string $default
+     * @return array|bool|mixed|string
+     */
     function env($index = '', $default = '')
     {
         static $env = [];
@@ -74,7 +86,11 @@ if (!function_exists('env')) {
 
 
 if (!function_exists('storage_path')) {
-    // 返回存储路径
+    /**
+     * 返回存储路径
+     * @param string $path
+     * @return string
+     */
     function storage_path($path = '')
     {
         return ROOT_PATH . DS . 'storage' . DS . str_replace('/', DS, $path);
@@ -82,6 +98,14 @@ if (!function_exists('storage_path')) {
 }
 
 if (!function_exists('storage')) {
+    /**
+     * @param $fileName
+     * @param $content
+     * @param string $path
+     * @param int $flags
+     * @param null $context
+     * @return bool|int
+     */
     function storage($fileName, $content, $path = '', $flags = 0, $context = null)
     {
         if (!is_dir(storage_path($path))) {
@@ -93,6 +117,10 @@ if (!function_exists('storage')) {
 }
 
 if (!function_exists('public_path')) {
+    /**
+     * @param string $path
+     * @return string
+     */
     function public_path($path = '')
     {
         return ROOT_PATH . DS . 'public' . $path;
@@ -101,7 +129,13 @@ if (!function_exists('public_path')) {
 
 
 if (!function_exists('config')) {
-    // 获取配置信息
+    /**
+     * 获取配置信息
+     * @param string $index
+     * @param null $default
+     * @return mixed
+     * @throws Exception
+     */
     function config($index = '', $default = null)
     {
         return App::make(\core\wen\Config::class)->get($index, $default);
@@ -109,7 +143,13 @@ if (!function_exists('config')) {
 }
 
 if (!function_exists('request')) {
-    // 获取请求参数
+    /**
+     * 获取请求参数
+     * @param string $index
+     * @param null $default
+     * @return mixed
+     * @throws Exception
+     */
     function request($index = '', $default = null)
     {
         return App::make(core\wen\Request::class)->param($index, $default);
@@ -117,6 +157,12 @@ if (!function_exists('request')) {
 }
 
 if (!function_exists('request_post')) {
+    /**
+     * @param string $index
+     * @param null $default
+     * @return mixed
+     * @throws Exception
+     */
     function request_post($index = '', $default = null)
     {
         return App::make(\core\wen\Request::class)->post($index, $default);
@@ -124,12 +170,24 @@ if (!function_exists('request_post')) {
 }
 
 if (!function_exists('request_get')) {
+    /**
+     * @param string $index
+     * @param null $default
+     * @return mixed
+     * @throws Exception
+     */
     function request_get($index = '', $default = null)
     {
         return App::make(\core\wen\Request::class)->get($index, $default);
     }
 }
 if (!function_exists('server')) {
+    /**
+     * @param string $index
+     * @param null $default
+     * @return mixed
+     * @throws Exception
+     */
     function server($index = '', $default = null)
     {
         return App::make(\core\wen\Request::class)->server($index, $default);
@@ -137,6 +195,12 @@ if (!function_exists('server')) {
 }
 
 if (!function_exists('post')) {
+    /**
+     * @param string $index
+     * @param null $default
+     * @return mixed
+     * @throws Exception
+     */
     function post($index = '', $default = null)
     {
         return App::make(\core\wen\Request::class)->post($index, $default);
@@ -168,7 +232,11 @@ if (!function_exists('apiResponse')) {
 }
 
 if (!function_exists('get_client_IP')) {
-    // 获取客户端IP地址
+    /**
+     * 获取客户端IP地址
+     * @return array|false|string
+     * @throws Exception
+     */
     function get_client_IP()
     {
         $request = App::make(\core\wen\Request::class);
@@ -194,15 +262,26 @@ if (!function_exists('get_client_IP')) {
     }
 }
 
+
 if (!function_exists('view')) {
-    function view($template = '', $options = [])
+    /**
+     * @param string $template
+     * @param array $variables
+     * @return \core\wen\View|mixed
+     * @throws Exception
+     */
+    function view($template = '', $variables = [])
     {
-        return App::make(\core\wen\View::class)->template($template)->options($options);
+        return App::make(\core\wen\View::class)->template($template)->variables($variables);
     }
 }
 
 
 if (!function_exists('view_layout')) {
+    /**
+     * @param string $template
+     * @param array $options
+     */
     function view_layout($template = '', $options = [])
     {
         extract($options);

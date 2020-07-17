@@ -16,100 +16,12 @@ class Output
     protected static $_output_exception = false;
 
 
-    public static function header()
-    {
-        echo '<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-    <style>
-        .one-group-data{
-            background: #000;
-            color: lawngreen;
-            padding: 10px;
-            margin-top: 10px;
-        }
-        *{
-            padding: 0px;
-            margin: 0px;
-            list-style: none;
-        }
-    </style>
-</head>
-<body>';
-    }
-
-    public static function footer()
-    {
-        echo '</body>
-</html>';
-    }
-
     public static function show($var)
     {
-        self::header();
-        self::showSection($var);
-        self::footer();
+        (new View('dump/dump', ['data' => $var]))
+            ->rootPath(CORE_PATH . DS . 'wen' . DS . 'views' . DS)
+            ->render();
     }
-
-    protected static function showSection($var)
-    {
-        foreach ($var as $key => $vo) {
-            echo '<section class="one-group-data">';
-            self::showDetail($vo);
-            echo '</section>';
-        }
-    }
-
-    protected static function showDetail($var, $flag = 0)
-    {
-        $pref = '';
-        for ($i = 0; $i < $flag + 1; $i++) {
-            $pref .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-        }
-        if (is_array($var)) {
-            echo '<div class="one-array-data">';
-            if (!$flag) {
-                echo 'array(' . count($var) . '){';
-                if (!empty($var)) {
-                    echo '<br/>';
-                }
-            }
-            foreach ($var as $key => $vo) {
-                if (is_array($vo)) {
-                    if (!empty($vo)) {
-                        echo $pref . $key . ' => array(' . count($var[$key]) . '){<br/>';
-                        self::showDetail($vo, ++$flag);
-                        $flag--;
-                        echo $pref . '}<br/>';
-                    } else {
-                        echo $pref . $key . ' => array(' . count($var[$key]) . '){}<br/>';
-                    }
-                } else {
-                    echo $pref . $key . ' => ';
-                    var_dump($vo);
-                    echo '<br/>';
-                }
-            }
-
-        } else {
-            echo '<div class="one-string-data">';
-            if (is_string($var)) {
-                echo ($flag ? $pref : '') . 'string(' . strlen($var) . ')"' . $var . '"';
-            } else {
-                var_dump($var);
-            }
-            echo '</div>';
-        }
-        if (!$flag && is_array($var)) {
-            echo '}</div>';
-        }
-    }
-
 
     public static function throwException(\Throwable $e)
     {
@@ -170,7 +82,7 @@ class Output
         ];
         $view->rootPath(CORE_PATH . DS . 'wen' . DS . 'views' . DS)
             ->template('exception/exception')
-            ->options($data)->render();
+            ->variables($data)->render();
         exit(0);
     }
 

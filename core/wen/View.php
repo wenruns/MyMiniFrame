@@ -48,12 +48,17 @@ class View
 
     /**
      * View constructor.
+     * @param string $_template
+     * @param array $variables
+     * @throws \Exception
      */
-    public function __construct()
+    public function __construct($_template = '', $variables = [])
     {
         $this->_configs = config('view');
         $this->_root_path = str_replace('\\', '/', $this->_configs['tpl_path']);
         $this->_suffix = $this->_configs['tpl_suffix'];
+        $this->_template = $_template;
+        $this->_options = $variables;
     }
 
     /**
@@ -80,12 +85,12 @@ class View
 
     /**
      * 设置模板数据
-     * @param array $options
-     * @return $this\
+     * @param array $variables
+     * @return $this
      */
-    public function options($options = [])
+    public function variables($variables = [])
     {
-        $this->_options = $options;
+        $this->_options = array_merge($this->_options, $variables);
         return $this;
     }
 
@@ -127,14 +132,14 @@ class View
         if (empty($this->_template)) {
             $relative_path = $this->getDefaultRelativePath();
         } else {
-            $relative_path = $this->_template . $this->_suffix;
+            $relative_path = str_replace('.', '/', $this->_template) . $this->_suffix;
         }
         return $this->getCachePath(strtolower($relative_path));
     }
 
 
     /**
-     * 缓存模板文件
+     * 生成缓存模板文件
      * @param $real_path
      * @param $cache_path
      * @throws \Exception
@@ -189,6 +194,10 @@ class View
         $content = preg_replace('/@method\((.*)\)/', '<?php echo ${1}; ?>', $content);
         # 结束标签
         $content = preg_replace('/@(end\S*)/', '<?php ${1}; ?>', $content);
+        # 匹配switch
+        $content = preg_replace('/@switch\s*\((.*)\)\s*/', '<?php switch(${1}): ?>', $content);
+        $content = preg_replace('/@case\s*\((.*)\)\s*/', '<?php case ${1}: ?>', $content);
+        $content = preg_replace('/@break\s*/', '<?php break; ?>', $content);
         # 匹配foreach、if、elseif、else、for等等
         $content = preg_replace('/@(([^\(\s])+\x20*(\((.*)\)|))/', '<?php ${1} : ?>', $content);
         return $content;
@@ -211,7 +220,12 @@ class View
         }
         $cache_path = $path . DS . $cache_file_name;
 
-        if ((!key_exists(md5($relative_path), $this->_layouts) || $this->_layouts[md5($relative_path)] == 1) && (config('app.app_debug', false) || !file_exists($cache_path))) {
+        // 判断是否需要生成缓存页面
+        if ((!key_exists(md5($relative_path), $this->_layouts)
+                || $this->_layouts[md5($relative_path)] == 1)
+            && (config('app.app_debug', false)
+                || !file_exists($cache_path))
+        ) {
             $this->cacheViewPage($real_path, $cache_path);
         }
         return str_replace('\\', '/', $cache_path);
@@ -226,7 +240,6 @@ class View
     protected function getRealPath($relative_path)
     {
         $real_path = $this->_root_path . $relative_path;
-//        echo ($real_path);die;
         if (is_file($real_path)) {
             return $real_path;
         }
@@ -234,8 +247,9 @@ class View
     }
 
     /**
-     * 获取默认的模板
+     * 获取默认的视图路径
      * @return mixed|string
+     * @throws \Exception
      */
     protected function getDefaultRelativePath()
     {

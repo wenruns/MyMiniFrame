@@ -15,9 +15,6 @@ class IndexController extends BaseController
 {
     public function index()
     {
-        return [
-            'status' => true,
-            'error' => 'request: ok'
-        ];
+        return view('admin.index.index');
     }
 }
