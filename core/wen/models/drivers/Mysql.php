@@ -6,7 +6,9 @@
  * Time: 16:27
  */
 
-class Mysql
+namespace core\wen\models\drivers;
+
+class Mysql implements Driver
 {
 
 }

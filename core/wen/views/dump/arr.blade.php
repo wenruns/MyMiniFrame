@@ -24,6 +24,9 @@
                         @case('object')
                         {{var_dump($vo)}}
                         @break
+                        @case('boolean')
+                        boolean({{$vo ? 'true' : 'false'}})
+                        @break;
                         @default
                         {{gettype($vo)}}({{strlen($vo)}}) "{{$vo}}"
                     @endswitch
@@ -45,6 +48,9 @@
             @case('object')
             {{var_dump($data)}}
             @break
+            @case('boolean')
+            boolean({{$data ? 'true' : 'false'}})
+            @break;
             @default
             {{gettype($data)}}({{strlen($data)}}) "{{$data}}"
         @endswitch

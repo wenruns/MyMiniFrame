@@ -19,7 +19,9 @@
                     "<?php echo htmlentities($k); ?>" =>
                     <?php switch(gettype($vo)): ?><?php case 'integer': ?>int(<?php echo htmlentities(strlen($vo)); ?>) <?php echo htmlentities($vo); ?>
                         <?php break; ?><?php case 'object': ?><?php echo htmlentities(var_dump($vo)); ?>
-                        <?php break; ?><?php default : ?>
+                        <?php break; ?><?php case 'boolean': ?>boolean(<?php echo htmlentities($vo ? 'true' : 'false'); ?>)
+                        <?php break; ?>;
+                        <?php default : ?>
                         <?php echo htmlentities(gettype($vo)); ?>(<?php echo htmlentities(strlen($vo)); ?>) "<?php echo htmlentities($vo); ?>"
                     <?php endswitch; ?>
                 </li>
@@ -35,7 +37,9 @@
     <div class="one-string-data">
         <?php switch(gettype($data)): ?><?php case 'integer': ?>int(<?php echo htmlentities(strlen($data)); ?>) <?php echo htmlentities($data); ?>
             <?php break; ?><?php case 'object': ?><?php echo htmlentities(var_dump($data)); ?>
-            <?php break; ?><?php default : ?>
+            <?php break; ?><?php case 'boolean': ?>boolean(<?php echo htmlentities($data ? 'true' : 'false'); ?>)
+            <?php break; ?>;
+            <?php default : ?>
             <?php echo htmlentities(gettype($data)); ?>(<?php echo htmlentities(strlen($data)); ?>) "<?php echo htmlentities($data); ?>"
         <?php endswitch; ?>
     </div>

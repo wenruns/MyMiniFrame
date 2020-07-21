@@ -11,40 +11,14 @@ namespace core\wen\models;
 
 class Condition
 {
+    protected $method = '';
 
-    protected $_column = '';
+    protected $arguments = [];
 
-    protected $_operator = '=';
 
-    protected $_value = '';
-
-    protected $_relation = 'and';
-
-    public function __construct()
+    public function __construct($method, $arguments)
     {
-    }
-
-    public function column($column)
-    {
-        $this->_column = $column;
-        return $this;
-    }
-
-    public function operator($operator)
-    {
-        $this->_operator = $operator;
-        return $this;
-    }
-
-    public function value($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    public function relation($relation)
-    {
-        $this->_relation = $relation;
-        return $this;
+        $this->method = $method;
+        $this->arguments = $arguments;
     }
 }

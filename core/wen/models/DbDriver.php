@@ -19,9 +19,13 @@ class DbDriver
     }
 
 
+    public function pluck($column, $key)
+    {
+
+    }
 
     public function toSql()
     {
-
+        return '';
     }
 }

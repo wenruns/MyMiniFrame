@@ -6,15 +6,21 @@
  * Time: 9:16
  */
 return [
-    'driver' => 'mysql',
 
-    'connect' => 'mysql',
+    'default' => 'mysql',
 
-    'connects' => [
+    'connections' => [
         'mysql' => [
-            'db_user' => '',
-            'db_password' => '',
-            'db_host' => '',
+            'driver' => 'mysql',
+            'username' => 'root',
+            'password' => 'root',
+            'host' => 'localhost',
+            'database' => 'test',
+            'port' => '3306',
+            'charset' => '',
+            'prefix' => '',
+            'schema' => '',
+            'sslmode' => '',
         ]
     ]
 ];

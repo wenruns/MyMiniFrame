@@ -10,14 +10,14 @@ namespace core\wen\models;
 
 class SqlBuilder
 {
-
-    protected $_conditions = [];
-
     protected $_query = null;
 
     protected $_driver = null;
 
-    protected function getDriver()
+    /**
+     * @return DbDriver|null
+     */
+    public function getDriver()
     {
         if (empty($this->_driver)) {
             $this->_driver = new DbDriver($this);
@@ -25,39 +25,19 @@ class SqlBuilder
         return $this->_driver;
     }
 
-    protected function condition()
-    {
-        return new Condition();
-    }
 
+    /**
+     * SqlBuilder constructor.
+     * @param $query
+     */
     public function __construct($query)
     {
         $this->_query = $query;
     }
 
-
-    public function addNestedWhereQuery(\Closure $closure, $relation = 'and')
-    {
-        $this->_conditions[] = $this->condition()->relation($relation)->column($closure);
-        return $this;
-    }
-
-
-    public function where($column, $operator, $value, $relation = 'and')
-    {
-        $this->_conditions[] = $this->condition()
-            ->column($column)
-            ->operator($operator)
-            ->value($value)
-            ->relation($relation);
-        return $this;
-    }
-
-    public function getConditions()
-    {
-        return $this->_conditions;
-    }
-
+    /**
+     * @return Model|null
+     */
     public function getModel()
     {
         if ($this->_query instanceof Model) {
@@ -66,8 +46,25 @@ class SqlBuilder
         return null;
     }
 
+    /**
+     * @return array
+     */
+    public function getFields()
+    {
+        return $this->getModel()->getFields();
+    }
+
+
+    public function exec($sql)
+    {
+
+    }
+
+    /**
+     * @return string
+     */
     public function toSql()
     {
-        $this->getDriver()->toSql();
+        return $this->getDriver()->toSql();
     }
 }

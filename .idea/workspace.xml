@@ -2,40 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d6d741-6636-484d-a262-d2095c5cdcc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PLAN.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/Condition.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/Connect.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/DbDriver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/MethodTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/Query.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/drivs/Mysql.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/views/dump/dump.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/static/ynTree/yntree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/static/ynTree/yntree.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/AdminUserPermissions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/wen/models/Join.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/wen/models/drivers/Driver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/home/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/index/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/common/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/common/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/common/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/common/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/37c93e87a3b530ef4bbae5c34a2e96d5.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/38e8300f1efbdd726a9361db6d164fbb.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/489bd7ec1ca2e0c23c2fc5d93c08744d.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/978037c11149e64c17dd3f53eadcb5e2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/b5773f00c36ea9e3b3b5116a6ff81768.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/c902ea12106ce987755de5dec633e9d2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/da80f5291dc36f3f9b7f32dc75030c18.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/e17cb549430a4e04060faf67e3c5b270.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/func.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/func.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/RouterDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/RouterDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/output/Output.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/output/Output.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/Condition.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Condition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/DbDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/DbDriver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/MethodTrait.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/drivs/Mysql.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,40 +45,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/DbDriver.php">
+        <entry file="file://$PROJECT_DIR$/configs/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="500">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/configs/database.php">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="-151">
+              <caret line="178" column="8" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/router.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/view.php">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Join.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-619" />
+            <state relative-caret-position="233">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
+        <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="400">
+              <caret line="20" column="128" selection-start-line="20" selection-start-column="128" selection-end-line="20" selection-end-column="128" />
+              <folding>
+                <element signature="e#129#163#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/AdminUserPermissions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Users.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Condition.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -104,40 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/wen/models/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/MethodTrait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-719" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-269" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="70" column="24" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="24" />
+            <state relative-caret-position="358">
+              <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -146,8 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>echo '</find>
-      <find>template</find>
       <find>$exception_codes</find>
       <find>view_layout</find>
       <find>{{</find>
@@ -176,6 +160,8 @@
       <find>template(</find>
       <find>options(</find>
       <find>@switch</find>
+      <find>select</find>
+      <find>alias</find>
     </findStrings>
     <replaceStrings>
       <replace>isTrue</replace>
@@ -190,17 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/const.php" />
-        <option value="$PROJECT_DIR$/core/wen/request/AbstractRequest.php" />
-        <option value="$PROJECT_DIR$/core/wen/Request.php" />
-        <option value="$PROJECT_DIR$/core/wen/request/Get.php" />
-        <option value="$PROJECT_DIR$/middlewares/ExampleMiddle.php" />
-        <option value="$PROJECT_DIR$/core/wen/App.php" />
-        <option value="$PROJECT_DIR$/app/services/alioss/AliOssService.php" />
-        <option value="$PROJECT_DIR$/app/services/aliOss/AliOssService.php" />
-        <option value="$PROJECT_DIR$/routes/admin.php" />
-        <option value="$PROJECT_DIR$/app/Bootstrap.php" />
-        <option value="$PROJECT_DIR$/core/wen/Bootstrap.php" />
         <option value="$PROJECT_DIR$/app/services/html2img/PhantomjsTools.php" />
         <option value="$PROJECT_DIR$/core/wen/Response.php" />
         <option value="$PROJECT_DIR$/storage/html2img/logs/log_2020_06_13.txt" />
@@ -230,17 +205,28 @@
         <option value="$PROJECT_DIR$/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php" />
         <option value="$PROJECT_DIR$/core/wen/views/dump/dump.blade.php" />
         <option value="$PROJECT_DIR$/core/wen/output/Output.php" />
-        <option value="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" />
         <option value="$PROJECT_DIR$/core/wen/View.php" />
-        <option value="$PROJECT_DIR$/app/controller/home/IndexController.php" />
+        <option value="$PROJECT_DIR$/configs/database.php" />
+        <option value="$PROJECT_DIR$/app/models/UsersTable.php" />
+        <option value="$PROJECT_DIR$/app/models/UsersTableTestAAA.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/DbDriver.php" />
+        <option value="$PROJECT_DIR$/app/models/UTableTestAAA.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/MethodTrait.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/drivs/Mysql.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/drivs/Driver.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/drivers/Driver.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" />
         <option value="$PROJECT_DIR$/core/wen/models/Connect.php" />
+        <option value="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/AdminUserPermissions.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/Join.php" />
+        <option value="$PROJECT_DIR$/app/models/Users.php" />
+        <option value="$PROJECT_DIR$/app/controller/home/IndexController.php" />
         <option value="$PROJECT_DIR$/core/wen/models/Condition.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/Method.php" />
         <option value="$PROJECT_DIR$/core/wen/models/Query.php" />
         <option value="$PROJECT_DIR$/core/wen/models/Model.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/MethodTrait.php" />
         <option value="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/DbDriver.php" />
-        <option value="$PROJECT_DIR$/configs/database.php" />
       </list>
     </option>
   </component>
@@ -252,6 +238,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="60" />
+    <option name="y" value="39" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -261,7 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,6 +273,12 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
@@ -316,60 +309,28 @@
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="wen" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="drivs" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="wen" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="html2img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="html2img" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="wen" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="dump" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,18 +434,21 @@
       <workItem from="1592008550234" duration="13455000" />
       <workItem from="1592182122339" duration="44000" />
       <workItem from="1592289267339" duration="7525000" />
-      <workItem from="1594949063361" duration="25578000" />
+      <workItem from="1594949063361" duration="25779000" />
+      <workItem from="1595206205845" duration="3108000" />
+      <workItem from="1595293028883" duration="6600000" />
+      <workItem from="1595310155386" duration="13641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="458181000" />
+    <option name="totallyTimeSpent" value="481731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2196162" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -497,7 +461,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4968017" visible="true" weight="0.31310943" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4968017" visible="true" weight="0.18526544" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50319827" side_tool="true" weight="0.31744313" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -511,24 +475,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/wen/error/303.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/accept.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/js/index.8fad716d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-550" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/json/custom.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255" />
@@ -597,16 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/func.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#87#115#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/views/dump/dump.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -614,38 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/views/dump/arr.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/output/Output.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/caches/views/c902ea12106ce987755de5dec633e9d2.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/caches/views/38e8300f1efbdd726a9361db6d164fbb.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/caches/views/37c93e87a3b530ef4bbae5c34a2e96d5.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/caches/views/3e24513a612f7934b731b99fc717159c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/caches/views/c902ea12106ce987755de5dec633e9d2.php" />
+    <entry file="file://$PROJECT_DIR$/core/caches/views/38e8300f1efbdd726a9361db6d164fbb.php" />
+    <entry file="file://$PROJECT_DIR$/core/caches/views/37c93e87a3b530ef4bbae5c34a2e96d5.php" />
+    <entry file="file://$PROJECT_DIR$/core/caches/views/3e24513a612f7934b731b99fc717159c.php" />
     <entry file="file://$PROJECT_DIR$/core/caches/views/e17cb549430a4e04060faf67e3c5b270.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
@@ -697,94 +605,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/App.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/drivs/Mysql.php">
+    <entry file="file://$PROJECT_DIR$/configs/router.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/view.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/app.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Driver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/models/Connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Condition.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/MethodTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="70" column="24" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="24" />
+        <state relative-caret-position="175">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/models/DbDriver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="250">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/app.php">
+    <entry file="file://$PROJECT_DIR$/core/wen/views/dump/arr.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-719" />
+        <state relative-caret-position="170">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/config.php">
+    <entry file="file://$PROJECT_DIR$/core/func.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269" />
+        <state relative-caret-position="450">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding>
+            <element signature="e#87#115#0#PHP" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/view.php">
+    <entry file="file://$PROJECT_DIR$/core/wen/output/Output.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-619" />
+        <state relative-caret-position="-677">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/router.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/models/AdminUserPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/configs/database.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Join.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="128" selection-start-line="20" selection-start-column="128" selection-end-line="20" selection-end-column="128" />
+          <folding>
+            <element signature="e#129#163#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Method.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="11" selection-start-line="11" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Condition.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151">
+          <caret line="178" column="8" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="47" />
         </state>
       </provider>
     </entry>
