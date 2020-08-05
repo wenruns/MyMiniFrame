@@ -17,4 +17,6 @@ class Users extends Model
 
     protected $primaryKey = 'id';
 
+    protected $connection = 'old_mysql';
+
 }

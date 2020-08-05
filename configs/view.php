@@ -15,29 +15,22 @@ return [
      * 视图后缀
      */
     'tpl_suffix' => '.blade.php',
+
     /**
-     * 左边界
+     * 模板变量匹配规则
      */
-    'border_left' => '{{',
-    /**
-     * 右边界
-     */
-    'border_right' => '}}',
-    /**
-     * html输出左边界
-     */
-    'html_border_left' => '{!!',
-    /**
-     * html输出右边界
-     */
-    'html_border_right' => '!!}',
-    /**
-     * 注释左边界
-     */
-    'note_border_left' => '{{--',
-    /**
-     * 注释右边界
-     */
-    'note_border_right' => '--}}',
+    'preg_replace' => [
+        '/{{--(.*)--}}/'                        => '<?php /**  ${1}  */ ?>', // 注释匹配
+        '/{!!([^\!!}]*)!!}/'                    => '<?php echo html_entity_decode(${1}); ?>', // html变量匹配
+        '/{{([^\}}]*)}}/'                       => '<?php echo htmlentities(${1}); ?>', // 变量匹配
+        '/@method\((.*)\)/'                     => '<?php echo ${1}; ?>', // 方法调用
+        '/@(end\S*)/'                           => '<?php ${1}; ?>', // 结束标志匹配
+        '/@switch\s*\((.*)\)\s*/'               => '<?php switch(${1}): ?>', // switch匹配
+        '/@case\s*\((.*)\)\s*/'                 => '<?php case ${1}: ?>', // case匹配
+        '/@break\s*/'                           => '<?php break; ?>', // break 匹配
+        '/@(([^\(\s])+\x20*(\((.*)\)|))/'       => '<?php ${1} : ?>', // 匹配foreach、if、elseif、else、for等等
+    ],
+
+
 
 ];

@@ -6,7 +6,6 @@
  * Time: 9:16
  */
 return [
-
     'default' => 'mysql',
 
     'connections' => [
@@ -15,12 +14,27 @@ return [
             'username' => 'root',
             'password' => 'root',
             'host' => 'localhost',
-            'database' => 'test',
+            'dbName' => 'test',
+            'port' => '3306',
+            'charset' => 'utf8',
+            'collate' => 'utf8_general_ci',
+            'engine' => null,
+            'prefix' => '',
+            'schema' => '',
+            'unixSocket' => '',
+            'options' => [],
+        ],
+        'old_mysql' => [
+            'driver' => 'mysql',
+            'username' => 'root',
+            'password' => 'root',
+            'host' => 'localhost',
+            'database' => 'signature',
             'port' => '3306',
             'charset' => '',
             'prefix' => '',
             'schema' => '',
-            'sslmode' => '',
+            'ssl_mode' => [],
         ]
     ]
 ];

@@ -21,4 +21,15 @@ class Condition
         $this->method = $method;
         $this->arguments = $arguments;
     }
+
+
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    public function getArguments()
+    {
+        return $this->arguments;
+    }
 }

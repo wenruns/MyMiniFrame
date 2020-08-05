@@ -16,7 +16,7 @@ class IndexController extends Controller
 {
     public function index(MiddleInterface $middle)
     {
-        dd($middle);
+//        dd($middle);
         $mobileConfig = new MobileConfig();
         $res = $mobileConfig->redirectUrl('1')
             ->organization('2')

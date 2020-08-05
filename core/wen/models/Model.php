@@ -8,6 +8,11 @@
 
 namespace core\wen\models;
 
+/**
+ * Class Model
+ * @package core\wen\models
+ *
+ */
 class Model extends Query
 {
     /**
@@ -33,19 +38,28 @@ class Model extends Query
     /**
      * @var string
      */
-    protected $connect = 'mysql';
+    protected $connection = 'mysql';
 
-    protected $joins = [];
+    /**
+     * @var array
+     */
+    protected $relationships = [];
 
+    /**
+     * @var string
+     */
     protected $aliasName = '';
+
+
+    protected $operator = 'select';
 
     /**
      * @throws \Exception
      */
     protected function initConnect()
     {
-        if (empty($this->connect)) {
-            $this->connect = config('database.default', 'mysql');
+        if (empty($this->connection)) {
+            $this->connection = config('database.default', 'mysql');
         }
     }
 
@@ -88,9 +102,20 @@ class Model extends Query
      */
     public function get()
     {
-        $this->buildSql()->execSql();
+        return $this->setAttr('operator', 'select')->buildSql()->execSql();
     }
 
+
+    protected function setAttr($attrName, $value)
+    {
+        $this->$attrName = $value;
+        return $this;
+    }
+
+    protected function getAttr($attrName, $default = null)
+    {
+        return isset($this->$attrName) ? $this->$attrName : $default;
+    }
 
     /**
      * @param $column
@@ -120,23 +145,35 @@ class Model extends Query
     }
 
     /**
-     *
+     * @param $data
+     * @param array $conditionFields
      */
-    public function update()
+    public function update($data, $conditionFields = [])
     {
 
     }
 
+    /**
+     * @param $rows
+     */
     public function limit($rows)
     {
 
     }
 
+    /**
+     * @param $line
+     */
     public function offset($line)
     {
 
     }
 
+    /**
+     * @param $column
+     * @param string $order
+     * @return $this
+     */
     public function orderBy($column, $order = 'asc')
     {
 //        dd($column, $order);
@@ -144,6 +181,10 @@ class Model extends Query
     }
 
 
+    /**
+     * @param $column
+     * @return $this
+     */
     public function groupBy($column)
     {
         return $this;
@@ -176,21 +217,65 @@ class Model extends Query
      */
     public function execSql($sql = '')
     {
-        return $this->getBuilder()->exec($sql);
+        $sql && $this->sql = $sql;
+        return $this->getBuilder()->exec($this->sql);
     }
 
 
     /**
      * @param $table
      * @param $primaryKey
-     * @param string $foreignKey
+     * @param $foreignKey
      * @param string $operator
      * @param string $aliasName
-     * @return Join
+     * @return $this
      */
-    public function join($table, $primaryKey, $foreignKey = '', $operator = '=', $aliasName = '')
+    public function join($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
     {
-        return $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName);
+        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName);
+        return $this;
+    }
+
+    /**
+     * @param $table
+     * @param $primaryKey
+     * @param $foreignKey
+     * @param string $operator
+     * @param string $aliasName
+     * @return $this
+     */
+    public function leftJoin($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
+    {
+        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName)->method('left');
+        return $this;
+    }
+
+    /**
+     * @param $table
+     * @param $primaryKey
+     * @param $foreignKey
+     * @param string $operator
+     * @param string $aliasName
+     * @return $this
+     */
+    public function rightJoin($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
+    {
+        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName)->method('right');
+        return $this;
+    }
+
+    /**
+     * @param $table
+     * @param $primaryKey
+     * @param $foreignKey
+     * @param string $operator
+     * @param string $aliasName
+     * @return $this
+     */
+    public function fullJoin($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
+    {
+        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName)->method('full');
+        return $this;
     }
 
     /**
@@ -200,7 +285,7 @@ class Model extends Query
     protected function addRelationship($table)
     {
         $join = new Join($this, $table);
-        $this->joins[] = $join;
+        $this->relationships[] = $join;
         return $join;
     }
 
@@ -230,15 +315,49 @@ class Model extends Query
     }
 
 
+    /**
+     * @return string
+     */
     public function getTable()
     {
         return $this->table;
     }
 
+    /**
+     * @return string
+     */
     public function getPrimaryKey()
     {
         return $this->primaryKey;
     }
 
+    /**
+     * @return string
+     */
+    public function getConnection()
+    {
+        return $this->connection;
+    }
 
+    /**
+     * @return array
+     */
+    public function getRelationships()
+    {
+        return $this->relationships;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAliasName()
+    {
+        return $this->aliasName;
+    }
+
+    public static function __callStatic($name, $arguments)
+    {
+        // TODO: Implement __callStatic() method.
+
+    }
 }

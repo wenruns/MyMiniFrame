@@ -10,6 +10,9 @@ namespace core\wen\models;
 
 class SqlBuilder
 {
+    /**
+     * @var Query|null
+     */
     protected $_query = null;
 
     protected $_driver = null;
@@ -30,20 +33,17 @@ class SqlBuilder
      * SqlBuilder constructor.
      * @param $query
      */
-    public function __construct($query)
+    public function __construct(Query $query)
     {
         $this->_query = $query;
     }
 
     /**
-     * @return Model|null
+     * @return Query|Model|null
      */
     public function getModel()
     {
-        if ($this->_query instanceof Model) {
-            return $this->_query;
-        }
-        return null;
+        return $this->_query;
     }
 
     /**
@@ -57,7 +57,7 @@ class SqlBuilder
 
     public function exec($sql)
     {
-
+        return $this->getDriver()->exec($sql);
     }
 
     /**

@@ -102,7 +102,7 @@ class View
         try {
             extract($this->_options);
             $template = $this->getTemplate();
-            include_once $template;
+            return include($template);
         } catch (\Exception $e) {
             Output::throwException($e);
         }
@@ -176,30 +176,9 @@ class View
             }
         }
 
-        $border_left = $this->_configs['border_left'];
-        $border_right = $this->_configs['border_right'];
-        $note_border_left = $this->_configs['note_border_left'];
-        $note_border_right = $this->_configs['note_border_right'];
-        $html_border_left = $this->_configs['html_border_left'];
-        $html_border_right = $this->_configs['html_border_right'];
-        # 注释
-        $content = preg_replace("/$note_border_left(.*)$note_border_right/", '<?php /**  ${1}  */ ?>', $content);
-        # 输出html标签
-        $non_content = '\\' . $html_border_right;
-        $content = preg_replace("/$html_border_left([^$non_content]*)$html_border_right/", '<?php echo html_entity_decode(${1}); ?>', $content);
-        # 输出html实体
-        $non_content = '\\' . $border_right;
-        $content = preg_replace("/$border_left([^$non_content]*)$border_right/", '<?php echo htmlentities(${1}); ?>', $content);
-        # 方法调用
-        $content = preg_replace('/@method\((.*)\)/', '<?php echo ${1}; ?>', $content);
-        # 结束标签
-        $content = preg_replace('/@(end\S*)/', '<?php ${1}; ?>', $content);
-        # 匹配switch
-        $content = preg_replace('/@switch\s*\((.*)\)\s*/', '<?php switch(${1}): ?>', $content);
-        $content = preg_replace('/@case\s*\((.*)\)\s*/', '<?php case ${1}: ?>', $content);
-        $content = preg_replace('/@break\s*/', '<?php break; ?>', $content);
-        # 匹配foreach、if、elseif、else、for等等
-        $content = preg_replace('/@(([^\(\s])+\x20*(\((.*)\)|))/', '<?php ${1} : ?>', $content);
+        foreach ($this->_configs['preg_replace'] as $preg => $replace){
+            $content = preg_replace($preg, $replace, $content);
+        }
         return $content;
     }
 

@@ -11,4 +11,10 @@ namespace core\wen\models\drivers;
 interface Driver
 {
 
+    /**
+     * @return string
+     */
+    public function toSql();
+
+
 }

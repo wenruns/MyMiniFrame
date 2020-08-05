@@ -104,17 +104,25 @@ class Join
     protected $fields = [];
 
 
+    protected $method = 'inner';
+
+    protected $sql = '';
+
+
     protected function getTable()
     {
+        if (gettype($this->table) == 'string') {
+            return $this->table;
+        }
+
         if ($this->table instanceof Model) {
             return $this->table->getTable();
         }
-
         $reflection = new \ReflectionClass($this->table);
         if ($reflection->isInstantiable() && ($instance = $reflection->newInstance()) instanceof Model) {
             return $instance->getTable();
         }
-        return $this->table;
+        throw new \Exception('join:table is not allowed!');
     }
 
     /**
@@ -136,7 +144,7 @@ class Join
      * @param string $operator
      * @return $this
      */
-    public function on($primaryKey, $foreignKey = '', $operator = '=')
+    public function on($primaryKey, $foreignKey, $operator = '=')
     {
         if (is_callable($primaryKey)) {
             call_user_func($primaryKey, $this);
@@ -161,6 +169,12 @@ class Join
         return $this;
     }
 
+    public function method($method = 'left')
+    {
+        $this->method = $method;
+        return $this;
+    }
+
     /**
      * @param $name
      * @param $arguments
@@ -181,5 +195,24 @@ class Join
     {
         // TODO: Implement __get() method.
         return $this->$name;
+    }
+
+
+    public function toSql()
+    {
+        if (empty($this->sql)) {
+            $this->sql = $this->method . ' join ' . $this->getTable() . ($this->aliasName ? ' as ' . $this->aliasName : '') . ' on ';
+            $this->condition();
+        }
+        return $this->sql;
+    }
+
+    protected function condition()
+    {
+        foreach ($this->condition as $item) {
+            $this->sql .= $item['primaryKey'] . $item['operator'] . $item['foreignKey'] . ' and ';
+        }
+        $this->sql = preg_replace('/and $/', '', $this->sql);
+        return $this;
     }
 }
