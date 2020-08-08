@@ -290,6 +290,14 @@ if (!function_exists('view_layout')) {
 }
 
 
+if (!function_exists('collect')) {
+    function collect($options)
+    {
+        return new \core\wen\Collect($options);
+    }
+}
+
+
 
 
 

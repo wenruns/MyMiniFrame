@@ -13,10 +13,11 @@ use core\wen\models\Model;
 class Users extends Model
 {
 
-    protected $table = 'admin_users';
+    protected $table = 'users';
 
     protected $primaryKey = 'id';
 
-    protected $connection = 'old_mysql';
+//    protected $table = 'user';
+//    protected $connection = 'old_mysql';
 
 }

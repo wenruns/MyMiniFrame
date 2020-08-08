@@ -29,12 +29,11 @@ return [
             'username' => 'root',
             'password' => 'root',
             'host' => 'localhost',
-            'database' => 'signature',
+            'dbName' => 'signature',
             'port' => '3306',
-            'charset' => '',
-            'prefix' => '',
+            'charset' => 'utf8',
+            'prefix' => 'cmf_',
             'schema' => '',
-            'ssl_mode' => [],
         ]
     ]
 ];

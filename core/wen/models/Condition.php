@@ -32,4 +32,75 @@ class Condition
     {
         return $this->arguments;
     }
+
+
+    public function isAlias($closure)
+    {
+        if ($this->method == 'alias') {
+            call_user_func($closure, ...$this->arguments);
+        }
+        return $this;
+    }
+
+    public function isRelation($closure)
+    {
+        if (in_array($this->method, [
+            'join', 'leftJoin', 'rightJoin', 'fullJoin', 'innerJoin'
+        ])) {
+            call_user_func($closure, $this->arguments);
+        }
+        return $this;
+    }
+
+    public function isCondition($closure)
+    {
+        if (in_array($this->method, [
+            'where', 'orWhere', 'whereNull', 'orWhereNull', 'whereNotNull', 'orWhereNotNull', 'regexp', 'orRegexp',
+            'like', 'orLike', 'equal', 'orEqual', 'lt', 'orLt', 'gt', 'orGt', 'between', 'orBetween',
+        ])) {
+            call_user_func($closure, $this->method, $this->arguments);
+        }
+        return $this;
+    }
+
+    public function isSelect($closure)
+    {
+        if ($this->method == 'select') {
+            call_user_func($closure, ...$this->arguments);
+        }
+        return $this;
+    }
+
+    public function isLimit($closure)
+    {
+        if ($this->method == 'limit') {
+            call_user_func($closure, ...$this->arguments);
+        }
+        return $this;
+    }
+
+
+    public function isOffset($closure)
+    {
+        if ($this->method == 'offset') {
+            call_user_func($closure, ...$this->arguments);
+        }
+        return $this;
+    }
+
+    public function isGroupBy($closure)
+    {
+        if ($this->method == 'groupBy') {
+            call_user_func($closure, $this->arguments);
+        }
+        return $this;
+    }
+
+    public function isOrderBy($closure)
+    {
+        if ($this->method == 'orderBy') {
+            call_user_func($closure, ...$this->arguments);
+        }
+        return $this;
+    }
 }

@@ -8,10 +8,28 @@
 
 namespace core\wen\models;
 
+
 /**
  * Class Model
  * @package core\wen\models
  *
+ * @method $this get($fields = null)
+ * @method $this pluck($value_column, $key_column)
+ * @method $this first($fields = null)
+ * @method $this save($data)
+ * @method $this update($data)
+ * @method $this select($fields)
+ * @method $this alias($aliasName)
+ * @method Join fullJoin($table, $primaryKey, $operator = '=', $foreignKey = '', $aliasName = '')
+ * @method Join rightJoin($table, $primaryKey, $operator = '=', $foreignKey = '', $aliasName = '')
+ * @method Join leftJoin($table, $primaryKey, $operator = '=', $foreignKey = '', $aliasName = '')
+ * @method Join join($table, $primaryKey, $operator = '=', $foreignKey = '', $aliasName = '')
+ * @method Join innerJoin($table, $primaryKey, $operator = '=', $foreignKey = '', $aliasName = '')
+ * @method $this transaction(\Closure $closure)
+ * @method $this groupBy($column)
+ * @method $this orderBy($column, $order = 'asc')
+ * @method $this offset($startLine)
+ * @method $this limit($rows)
  */
 class Model extends Query
 {
@@ -26,6 +44,11 @@ class Model extends Query
     protected $primaryKey = 'id';
 
     /**
+     * @var string
+     */
+    protected $prefix = '';
+
+    /**
      * @var array
      */
     protected $fields = [];
@@ -38,20 +61,8 @@ class Model extends Query
     /**
      * @var string
      */
-    protected $connection = 'mysql';
+    protected $connection = '';
 
-    /**
-     * @var array
-     */
-    protected $relationships = [];
-
-    /**
-     * @var string
-     */
-    protected $aliasName = '';
-
-
-    protected $operator = 'select';
 
     /**
      * @throws \Exception
@@ -86,127 +97,16 @@ class Model extends Query
         return $this;
     }
 
+
     /**
      * Model constructor.
      * @throws \ReflectionException
      */
     public function __construct()
     {
+
         $this->initConnect();
         $this->initTable();
-    }
-
-
-    /**
-     *
-     */
-    public function get()
-    {
-        return $this->setAttr('operator', 'select')->buildSql()->execSql();
-    }
-
-
-    protected function setAttr($attrName, $value)
-    {
-        $this->$attrName = $value;
-        return $this;
-    }
-
-    protected function getAttr($attrName, $default = null)
-    {
-        return isset($this->$attrName) ? $this->$attrName : $default;
-    }
-
-    /**
-     * @param $column
-     * @param $key
-     * @throws \Exception
-     */
-    public function pluck($column, $key)
-    {
-        $this->getBuilder()->getDriver()->pluck($column, $key);
-    }
-
-
-    /**
-     *
-     */
-    public function first()
-    {
-
-    }
-
-    /**
-     *
-     */
-    public function save()
-    {
-
-    }
-
-    /**
-     * @param $data
-     * @param array $conditionFields
-     */
-    public function update($data, $conditionFields = [])
-    {
-
-    }
-
-    /**
-     * @param $rows
-     */
-    public function limit($rows)
-    {
-
-    }
-
-    /**
-     * @param $line
-     */
-    public function offset($line)
-    {
-
-    }
-
-    /**
-     * @param $column
-     * @param string $order
-     * @return $this
-     */
-    public function orderBy($column, $order = 'asc')
-    {
-//        dd($column, $order);
-        return $this;
-    }
-
-
-    /**
-     * @param $column
-     * @return $this
-     */
-    public function groupBy($column)
-    {
-        return $this;
-    }
-
-    /**
-     * @param \Closure $closure
-     * @return mixed
-     */
-    public function transaction(\Closure $closure)
-    {
-        return call_user_func(function (Model $model) use ($closure) {
-            // todo:: 启动事务
-            try {
-                $res = call_user_func($closure, $model);
-                // todo:: 提交事务
-            } catch (\Exception $e) {
-                // todo:: 回滚事务
-                throw new \Exception($e);
-            }
-            return $res;
-        }, $this);
     }
 
 
@@ -217,94 +117,11 @@ class Model extends Query
      */
     public function execSql($sql = '')
     {
-        $sql && $this->sql = $sql;
-        return $this->getBuilder()->exec($this->sql);
+
+//        $this->getPDO()->
+        return $this->getBuilder();
     }
 
-
-    /**
-     * @param $table
-     * @param $primaryKey
-     * @param $foreignKey
-     * @param string $operator
-     * @param string $aliasName
-     * @return $this
-     */
-    public function join($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
-    {
-        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName);
-        return $this;
-    }
-
-    /**
-     * @param $table
-     * @param $primaryKey
-     * @param $foreignKey
-     * @param string $operator
-     * @param string $aliasName
-     * @return $this
-     */
-    public function leftJoin($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
-    {
-        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName)->method('left');
-        return $this;
-    }
-
-    /**
-     * @param $table
-     * @param $primaryKey
-     * @param $foreignKey
-     * @param string $operator
-     * @param string $aliasName
-     * @return $this
-     */
-    public function rightJoin($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
-    {
-        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName)->method('right');
-        return $this;
-    }
-
-    /**
-     * @param $table
-     * @param $primaryKey
-     * @param $foreignKey
-     * @param string $operator
-     * @param string $aliasName
-     * @return $this
-     */
-    public function fullJoin($table, $primaryKey, $foreignKey, $operator = '=', $aliasName = '')
-    {
-        $this->addRelationship($table)->on($primaryKey, $foreignKey, $operator)->alias($aliasName)->method('full');
-        return $this;
-    }
-
-    /**
-     * @param $table
-     * @return Join
-     */
-    protected function addRelationship($table)
-    {
-        $join = new Join($this, $table);
-        $this->relationships[] = $join;
-        return $join;
-    }
-
-
-    public function alias($aliasName)
-    {
-        $this->aliasName = $aliasName;
-        return $this;
-    }
-
-    /**
-     * @param $fields
-     * @return $this
-     */
-    public function select($fields)
-    {
-        $this->setFields($fields);
-        return $this;
-    }
 
     /**
      * @return array
@@ -340,24 +157,38 @@ class Model extends Query
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getRelationships()
+    public function getPrefix()
     {
-        return $this->relationships;
+        return $this->prefix;
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getAliasName()
+    public function getOrigin()
     {
-        return $this->aliasName;
+        return $this->origin;
     }
 
-    public static function __callStatic($name, $arguments)
+    /**
+     * @return array
+     */
+    public function toArray()
     {
-        // TODO: Implement __callStatic() method.
+        return $this->origin;
+    }
 
+    public function __get($name)
+    {
+        // TODO: Implement __get() method.
+        return $this->origin[$name];
+    }
+
+    public function __set($name, $value)
+    {
+        // TODO: Implement __set() method.
+        $this->origin[$name] = $value;
     }
 }

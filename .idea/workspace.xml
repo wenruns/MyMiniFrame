@@ -2,28 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d6d741-6636-484d-a262-d2095c5cdcc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/wen/models/drivers/Drivers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/wen/models/pdo/PDO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/AdminUsers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/wen/Collect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/admin/test/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/test/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/home/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/caches/views/e17cb549430a4e04060faf67e3c5b270.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/caches/views/e17cb549430a4e04060faf67e3c5b270.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/func.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/func.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/wen/models/Condition.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Condition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/models/Connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Connect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/models/DbDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/DbDriver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/DbDriver.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/wen/models/Join.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Join.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/wen/models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/wen/models/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/Query.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/models/drivers/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/drivers/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wen/views/dump/dump.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/views/dump/dump.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/drivers/Driver.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/drivers/Drivers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wen/models/pdo/PDO.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/wen/models/pdo/PDO.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,19 +46,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="377">
+              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
               <folding>
                 <element signature="e#129#163#0#PHP" expanded="true" />
               </folding>
@@ -72,43 +58,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/DbDriver.php">
+        <entry file="file://$PROJECT_DIR$/app/models/Users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
-              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+            <state relative-caret-position="250">
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="199" column="25" lean-forward="true" selection-start-line="199" selection-start-column="25" selection-end-line="199" selection-end-column="25" />
               <folding>
-                <element signature="e#125#161#0#PHP" expanded="true" />
+                <element signature="e#147#181#0#PHP" />
+                <element signature="e#217#247#0#PHP" />
+                <element signature="e#278#306#0#PHP" />
+                <element signature="e#340#369#0#PHP" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Drivers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1525">
-              <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-              <folding>
-                <element signature="e#133#161#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Mysql.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5800">
-              <caret line="237" column="58" selection-start-line="237" selection-start-column="58" selection-end-line="237" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wen/models/Connect.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4300">
-              <caret line="177" column="5" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -116,26 +84,47 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/wen/models/pdo/PDO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="995">
-              <caret line="176" column="20" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
+            <state relative-caret-position="350">
+              <caret line="317" column="53" lean-forward="true" selection-start-line="317" selection-start-column="53" selection-end-line="317" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Condition.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="674">
+              <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/SPL/SPL.php">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Join.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
+            <state relative-caret-position="235">
+              <caret line="224" column="44" selection-start-line="224" selection-start-column="44" selection-end-line="224" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Query.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="191" column="24" selection-start-line="191" selection-start-column="24" selection-end-line="191" selection-end-column="24" />
+              <folding>
+                <element signature="e#124#141#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3850">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -143,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="23" />
+            <state relative-caret-position="625">
+              <caret line="31" column="34" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -153,36 +142,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>exception</find>
-      <find>subDir(</find>
-      <find>group</find>
-      <find>APP_DEBUG</find>
-      <find>getAction</find>
-      <find>storage</find>
-      <find>@method</find>
-      <find>namespace</find>
-      <find>unset($_GET)</find>
-      <find>addAttribute</find>
-      <find>dump</find>
-      <find>$request</find>
-      <find>$first</find>
-      <find>dump(</find>
-      <find>uniqueFlag</find>
-      <find>configs</find>
-      <find>data</find>
-      <find>datas</find>
-      <find>template(</find>
-      <find>options(</find>
-      <find>@switch</find>
+      <find>getValues</find>
       <find>select</find>
-      <find>alias</find>
-      <find>operation</find>
-      <find>dd(</find>
+      <find>addval</find>
+      <find>buildSql()</find>
+      <find>-&gt;sql</find>
+      <find>PDO</find>
+      <find>isCondition</find>
+      <find>condition(</find>
+      <find>getTable</find>
+      <find>s</find>
+      <find>setV</find>
+      <find>isJO</find>
+      <find>__call</find>
+      <find>leftJoin</find>
+      <find>name</find>
+      <find>attr(</find>
+      <find>select(</find>
+      <find>first(</find>
+      <find>getPd</find>
+      <find>character</find>
+      <find>fir</find>
+      <find>pluck</find>
       <find>get(</find>
-      <find>connection</find>
-      <find>connec</find>
-      <find>equal</find>
-      <find>options</find>
+      <find>getPre</find>
+      <find>setvalue</find>
+      <find>setVal</find>
+      <find>v</find>
+      <find>save(</find>
+      <find>transaction(</find>
+      <find>insert</find>
     </findStrings>
     <replaceStrings>
       <replace>isTrue</replace>
@@ -197,8 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controller/admin/IndexController.php" />
-        <option value="$PROJECT_DIR$/core/wen/traits/FileTrait.php" />
         <option value="$PROJECT_DIR$/app/controller/BaseController.php" />
         <option value="$PROJECT_DIR$/app/controller/xml/BaseController.php" />
         <option value="$PROJECT_DIR$/app/controller/xml/ExplainFileController.php" />
@@ -227,26 +214,28 @@
         <option value="$PROJECT_DIR$/core/wen/models/Method.php" />
         <option value="$PROJECT_DIR$/core/wen/views/dump/dump.blade.php" />
         <option value="$PROJECT_DIR$/core/wen/models/drivers/Driver.php" />
-        <option value="$PROJECT_DIR$/app/models/Users.php" />
-        <option value="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" />
         <option value="$PROJECT_DIR$/core/caches/views/2fbb9de24cf4ab039fc90cdfc1b2f296.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/Join.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/Model.php" />
         <option value="$PROJECT_DIR$/app/controller/admin/test/IndexController.php" />
-        <option value="$PROJECT_DIR$/core/func.php" />
         <option value="$PROJECT_DIR$/core/wen/output/Output.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/Condition.php" />
-        <option value="$PROJECT_DIR$/app/controller/home/IndexController.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/Query.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/DbDriver.php" />
         <option value="$PROJECT_DIR$/core/wen/models/drivers/Drivers.php" />
         <option value="$PROJECT_DIR$/core/wen/View.php" />
         <option value="$PROJECT_DIR$/configs/view.php" />
-        <option value="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" />
         <option value="$PROJECT_DIR$/core/wen/models/Connect.php" />
         <option value="$PROJECT_DIR$/core/wen/models/pdo/Options.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/DbDriver.php" />
+        <option value="$PROJECT_DIR$/core/func.php" />
+        <option value="$PROJECT_DIR$/core/wen/Collect.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/Condition.php" />
+        <option value="$PROJECT_DIR$/core/wen/views/dump/arr.blade.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/Join.php" />
+        <option value="$PROJECT_DIR$/app/models/AdminUsers.php" />
         <option value="$PROJECT_DIR$/configs/database.php" />
+        <option value="$PROJECT_DIR$/app/models/Users.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/Model.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/SqlBuilder.php" />
+        <option value="$PROJECT_DIR$/core/wen/models/Query.php" />
+        <option value="$PROJECT_DIR$/app/controller/home/IndexController.php" />
         <option value="$PROJECT_DIR$/core/wen/models/pdo/PDO.php" />
       </list>
     </option>
@@ -259,8 +248,6 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="301" />
-    <option name="y" value="-18" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -281,6 +268,30 @@
             <path>
               <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -301,8 +312,15 @@
               <item name="testHtml" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="wen" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="pdo" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="wen" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="dump" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -424,17 +442,21 @@
       <workItem from="1596416174891" duration="4296000" />
       <workItem from="1596505205680" duration="12993000" />
       <workItem from="1596588053509" duration="613000" />
-      <workItem from="1596618156486" duration="3731000" />
+      <workItem from="1596618156486" duration="4008000" />
+      <workItem from="1596674795022" duration="26955000" />
+      <workItem from="1596761221133" duration="18733000" />
+      <workItem from="1596847208834" duration="18596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="550659000" />
+    <option name="totallyTimeSpent" value="615220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20415778" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -447,7 +469,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4968017" visible="true" weight="0.35102925" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4968017" visible="true" weight="0.18201517" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50319827" side_tool="true" weight="0.31744313" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -461,26 +483,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/exception/RouteException.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/views/common/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/views/common/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/exception/AbstractException.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -557,27 +559,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Driver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/views/dump/arr.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="995">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Driver.php" />
     <entry file="file://$PROJECT_DIR$/core/caches/views/e17cb549430a4e04060faf67e3c5b270.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
@@ -599,41 +581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Join.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="124" column="29" lean-forward="true" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/output/Output.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/func.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
-          <folding>
-            <element signature="e#87#115#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Condition.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -654,64 +605,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/pdo/Options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#129#163#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/DbDriver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-          <folding>
-            <element signature="e#125#161#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Drivers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-          <folding>
-            <element signature="e#133#161#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5800">
-          <caret line="237" column="58" selection-start-line="237" selection-start-column="58" selection-end-line="237" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/pdo/Options.php" />
     <entry file="file://$PROJECT_DIR$/core/wen/models/Connect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4300">
@@ -719,31 +613,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/database.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/SPL/SPL.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="1525">
+          <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/SPL/SPL.php">
+    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Mysql.php" />
+    <entry file="file://$PROJECT_DIR$/core/wen/models/drivers/Drivers.php" />
+    <entry file="file://$PROJECT_DIR$/core/wen/models/DbDriver.php" />
+    <entry file="file://$PROJECT_DIR$/core/wen/Collect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
+        <state relative-caret-position="593">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/views/dump/arr.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="56" column="22" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7225">
+          <caret line="295" column="32" selection-start-line="295" selection-start-column="32" selection-end-line="295" selection-end-column="32" />
+          <folding>
+            <element signature="e#87#115#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Join.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="224" column="44" selection-start-line="224" selection-start-column="44" selection-end-line="224" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/AdminUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3850">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="191" column="24" selection-start-line="191" selection-start-column="24" selection-end-line="191" selection-end-column="24" />
+          <folding>
+            <element signature="e#124#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/Condition.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aliOss/AliOss.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3123">
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="910" column="20" selection-start-line="910" selection-start-column="20" selection-end-line="910" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/home/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="e#129#163#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wen/models/SqlBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="199" column="25" lean-forward="true" selection-start-line="199" selection-start-column="25" selection-end-line="199" selection-end-column="25" />
+          <folding>
+            <element signature="e#147#181#0#PHP" />
+            <element signature="e#217#247#0#PHP" />
+            <element signature="e#278#306#0#PHP" />
+            <element signature="e#340#369#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/wen/models/pdo/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="995">
-          <caret line="176" column="20" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
+        <state relative-caret-position="350">
+          <caret line="317" column="53" lean-forward="true" selection-start-line="317" selection-start-column="53" selection-end-line="317" selection-end-column="53" />
         </state>
       </provider>
     </entry>

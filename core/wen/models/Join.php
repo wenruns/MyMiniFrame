@@ -137,6 +137,13 @@ class Join
 //        dd($this->getTable());
     }
 
+    /**
+     * @return Model|null
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
 
     /**
      * @param $primaryKey
@@ -144,10 +151,14 @@ class Join
      * @param string $operator
      * @return $this
      */
-    public function on($primaryKey, $foreignKey, $operator = '=')
+    public function on($primaryKey, $operator = '=', $foreignKey = '')
     {
         if (is_callable($primaryKey)) {
-            call_user_func($primaryKey, $this);
+            $query = new Query();
+            call_user_func($primaryKey, $query);
+            $this->condition[] = [
+                'primaryKey' => $query,
+            ];
         } else {
             $this->condition[] = [
                 'primaryKey' => $primaryKey,
@@ -178,13 +189,12 @@ class Join
     /**
      * @param $name
      * @param $arguments
-     * @return $this
+     * @return mixed
      */
     public function __call($name, $arguments)
     {
         // TODO: Implement __call() method.
-        $this->model->$name(...$arguments);
-        return $this;
+        return $this->model->$name(...$arguments);
     }
 
     /**
@@ -201,7 +211,8 @@ class Join
     public function toSql()
     {
         if (empty($this->sql)) {
-            $this->sql = $this->method . ' join ' . $this->getTable() . ($this->aliasName ? ' as ' . $this->aliasName : '') . ' on ';
+            $table = trim($this->getTable());
+            $this->sql = $this->method . ' join ' . $table . ($this->aliasName ? ' as ' . $this->aliasName : '') . ' on ';
             $this->condition();
         }
         return $this->sql;
@@ -210,9 +221,21 @@ class Join
     protected function condition()
     {
         foreach ($this->condition as $item) {
-            $this->sql .= $item['primaryKey'] . $item['operator'] . $item['foreignKey'] . ' and ';
+            if ($item['primaryKey'] instanceof Query) {
+                $sql = $item['primaryKey']->buildSql($this) . ' ';
+//                $values = $item['primaryKey']->getBuilder()->getValues();
+//                foreach ($values as $kk => $val) {
+////                    $sql = preg_replace('/' . $kk . '( |\))/', $val . '${1}', $sql);
+//                    $this->model->addValues($kk, $val);
+//                }
+                $this->sql .= $sql;
+            } else {
+                $this->sql .= $item['primaryKey'] . ' ' . $item['operator'] . ' ' . $item['foreignKey'] . ' and ';
+            }
         }
         $this->sql = preg_replace('/and $/', '', $this->sql);
         return $this;
     }
+
+
 }

@@ -8,6 +8,9 @@
 
 namespace core\wen\models;
 
+use core\wen\App;
+use core\wen\models\pdo\PDO;
+
 /**
  * @package core\wen\models
  *
@@ -67,8 +70,10 @@ class Query
      */
     protected $model = null;
 
-    protected $sql = '';
-
+    /**
+     * @var PDO|null
+     */
+    protected $pdo = null;
     /**
      * @var array
      */
@@ -78,6 +83,12 @@ class Query
      * @var null
      */
     protected $sqlBuilder = null;
+
+    /**
+     * @var null|\Exception
+     */
+    protected $exception = null;
+
 
     /**
      * @var array
@@ -101,13 +112,58 @@ class Query
         'orGt',
         'between',
         'orBetween',
+        'select',
+        'alias',
+        'groupBy',
+        'orderBy',
+        'offset',
+        'limit'
     ];
+
+    protected $relations = [
+        'fullJoin',
+        'rightJoin',
+        'leftJoin',
+        'innerJoin',
+        'join',
+    ];
+
+    protected $operator = [
+        'transaction',
+        'get',
+        'pluck',
+        'first',
+        'update',
+        'delete',
+        'save',
+    ];
+
+    /**
+     * @param $attrName
+     * @param $value
+     * @return $this
+     */
+    protected function setAttr($attrName, $value)
+    {
+        $this->$attrName = $value;
+        return $this;
+    }
+
+    /**
+     * @param $attrName
+     * @param null $default
+     * @return |null
+     */
+    protected function getAttr($attrName, $default = null)
+    {
+        return isset($this->$attrName) ? $this->$attrName : $default;
+    }
 
     /**
      * @return SqlBuilder|null
      * @throws \Exception
      */
-    protected function getBuilder()
+    public function getBuilder()
     {
         if (empty($this->sqlBuilder)) {
             $this->sqlBuilder = new SqlBuilder($this);
@@ -115,74 +171,189 @@ class Query
         return $this->sqlBuilder;
     }
 
-    public function __construct(Model $model = null)
+    public function __construct(Query $model = null)
     {
         $this->model = $model;
     }
 
-    public function buildSql()
+    /**
+     * @param \Exception $e
+     * @return $this
+     */
+    public function exception(\Exception $e)
     {
-        $this->sql = $this->getBuilder()->toSql();
+        $this->exception = $e;
         return $this;
     }
 
+    public function getErrorInfo()
+    {
+        if (empty($this->exception)) {
+            return null;
+        }
+        return [
+            'errorCode' => $this->exception->getCode(),
+            'errorMsg' => $this->exception->getMessage(),
+        ];
+    }
 
+    /**
+     * @return array
+     */
     public function getConditions()
     {
         return $this->conditions;
     }
 
-    public function addValues($value)
+    /**
+     * @param $name
+     * @param $value
+     * @return $this
+     * @throws \Exception
+     */
+    public function addValues($name, $value)
     {
         if ($this->model) {
 //            $this->getBuilder()->getDriver()->addValues($value);
-            $this->model->getBuilder()->getDriver()->addValues($value);
+            $this->model->getBuilder()->addValue($name, $value);
         } else {
-            $this->getBuilder()->getDriver()->addValues($value);
+            $this->getBuilder()->addValue($name, $value);
         }
         return $this;
     }
 
+
+    /**
+     * @return SqlBuilder|null
+     * @throws \Exception
+     */
     public function toSql()
     {
-        return $this->getBuilder()->toSql();
+        return $this->getBuilder();
     }
 
-    public function getSqlInfos()
-    {
-        return [
-            'table' => $this->call_function('getTable'),
-            'selects' => $this->call_function('getFields'),
-            'primaryKey' => $this->call_function('getPrimaryKey'),
-            'aliasName' => $this->call_function('getAliasName'),
-            'conditions' => $this->getConditions(),
-            'relationships' => $this->call_function('getRelationships'),
-            'operator' => $this->call_function('getAttr', ['operator'])
-        ];
-    }
 
-    protected function call_function($methodName, $arguments = [])
+    /**
+     * @return PDO|mixed|null
+     * @throws \Exception
+     */
+    protected function getPDO()
     {
-        if (method_exists($this, $methodName)) {
-            return $this->$methodName(...$arguments);
+        if (empty($this->pdo)) {
+            $this->pdo = App::make(PDO::class, [$this->getBuilder()]);
         }
-        return null;
+        return $this->pdo;
     }
 
+    public function buildSql(Join $join = null)
+    {
+        return $this->getBuilder()->isJoin($join)->buildSql();
+    }
+
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return $this|Join|mixed
+     * @throws \Exception
+     */
     public function __call($name, $arguments)
     {
         // TODO: Implement __call() method.
+        ($rst = $this->isMethod($name, $arguments))
+        || ($rst = $this->isOperator($name, $arguments))
+        || ($rst = $this->isRelation($name, $arguments))
+        || ($rst = $this->checkMethod($name, $arguments));
+
+        if ($rst === false) {
+            throw new \Exception('method::' . $name . ' is not defined.');
+        }
+        return $rst;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return bool
+     */
+    protected function checkMethod($name, $arguments)
+    {
+        if (method_exists($this, $name)) {
+            return $this->$name(...$arguments);
+        } else if ($this->model && method_exists($this->model, $name)) {
+            return $this->model->$name(...$arguments);
+        }
+        return false;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return bool|Join
+     */
+    protected function isRelation($name, $arguments)
+    {
+        if (in_array($name, $this->relations)) {
+            $table = $arguments[0];
+            $primaryKey = $arguments[1];
+            $operator = isset($arguments[2]) ? $arguments[2] : '=';
+            $foreignKey = isset($arguments[3]) ? $arguments[3] : '';
+            $aliasName = isset($arguments[4]) ? $arguments[4] : '';
+            $join = new Join($this, $table);
+            $join->on($primaryKey, $operator, $foreignKey)->alias($aliasName)->method(str_replace('join', '', strtolower($name)));
+            $this->conditions[] = new Condition($name, $join);
+            return $join;
+        }
+        return false;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return $this|bool
+     * @throws \Exception
+     */
+    protected function isOperator($name, $arguments)
+    {
+        if (in_array($name, $this->operator)) {
+            $result = $this->getPdo()->$name(...$arguments);
+            $this->setAttr('origin', $result);
+            return $this;
+        }
+        return false;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return $this|bool
+     */
+    protected function isMethod($name, $arguments)
+    {
         if (in_array($name, $this->methods)) {
             $this->conditions[] = new Condition($name, $arguments);
             return $this;
-        } else {
-            if (method_exists($this, $name)) {
-                return $this->$name(...$arguments);
-            } else if ($this->model && method_exists($this->model, $name)) {
-                return $this->model->$name(...$arguments);
-            }
         }
-        throw new \Exception('method::' . $name . ' is not defined.');
+        return false;
+    }
+
+    /**
+     * @return Query
+     */
+    protected static function getInstance()
+    {
+        return new static();
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return mixed
+     */
+    public static function __callStatic($name, $arguments)
+    {
+        // TODO: Implement __callStatic() method.
+        return self::getInstance()->$name(...$arguments);
     }
 
 }
